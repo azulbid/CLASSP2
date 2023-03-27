@@ -1,4 +1,4 @@
-products = {
+products = { //tttmjtmtmj
     lista: [{
 		id: 1,
 		nombre: "Venus de Milo",
