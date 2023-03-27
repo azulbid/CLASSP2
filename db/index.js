@@ -1,5 +1,6 @@
 products = {
-    lista: []
+    lista: [
+    ]
 }
 
 module.exports = products;

@@ -5,7 +5,14 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    //<h1><%= title %></h1>
+    //<p>Welcome to <%= title %></p>
+  <h1>OBRAS DE ARTE</h1>
+  <ul>
+    <% for (let i=0; i<products.length; i++){ %>
+      <li><a href="/products/detalle/id/<%= products[i].id %>"><%= products[i].nombre %></a></li>  
+      <% } %>
+  </ul>
+  
   </body>
 </html>
