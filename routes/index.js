@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 module.exports = router;
 
-app.get('/registro', (req, res) => {
+router.get('/registro', function (req, res)  {
   res.render('register');
 });
 //module.exports = registro; 
