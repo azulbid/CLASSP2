@@ -1,9 +1,9 @@
-let db = require('../db/index');
+let products = require('../db/index');
 
 let productsController = {
     index: function(req,res){ 
           return res.render('index',{
-            lista: db.lista
+            lista: products.lista
           })
       
         },
