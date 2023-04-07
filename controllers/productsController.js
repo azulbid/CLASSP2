@@ -3,7 +3,7 @@ let db = require('../db/index');
 let productsController = {
     index: function(req,res){ 
           return res.render('index',{
-            producto: db.lista
+            lista: db.lista
           })
       
         },
@@ -17,4 +17,4 @@ let productsController = {
      // }
 }
 
-module.exports = productsController
+module.exports = productsController;

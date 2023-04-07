@@ -1,4 +1,4 @@
-products = {
+let products = {
     lista: [{
 		id: 1,
 		nombre: "Venus de Milo",
@@ -6,6 +6,7 @@ products = {
 		Técnica: "Escultura de Mármol",
 		Dimensiones: "211 cm de alto",
         Creación: "130 a. C.-100 a. C.",
+		imagen: '/imagenes/venusdemilo.webp'
 	}, {
 		id: 2,
 		nombre: "Apolo y Dafne",
