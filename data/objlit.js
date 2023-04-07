@@ -1,5 +1,0 @@
-//data = {
-   // usuario: 
-    //productos: 
-    //comentarios:
-//}
