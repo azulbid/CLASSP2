@@ -1,12 +1,12 @@
 //MAIN
 var express = require('express');
 var router = express.Router();
-let indexController = require('../controllers/indexController')
-router.get('/', indexController.index);
-//var registro = express.Registro()
+//let indexController = require('../controllers/indexController')
+//router.get('/', indexController.index);
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const productsController = require('../controllers/productsController')
+
+router.get('/', productsController.index);
+router.get('/registro', productsController.show);
+
 module.exports = router;

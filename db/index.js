@@ -1,4 +1,4 @@
-products = {
+let products = {
     lista: [{
 		id: 1,
 		nombre: "Venus de Milo",
@@ -6,6 +6,7 @@ products = {
 		Técnica: "Escultura de Mármol",
 		Dimensiones: "211 cm de alto",
         Creación: "130 a. C.-100 a. C.",
+		imagen: '/imagenes/venusdemilo.webp'
 	}, {
 		id: 2,
 		nombre: "Apolo y Dafne",
@@ -31,7 +32,7 @@ products = {
 
 	}, 
 {
-		id: 4,
+		id: 5,
 		nombre: "Venus del Pardo",
 		Artista: "Tiziano",
 		Técnica: "Óleo sobre lienzo",
