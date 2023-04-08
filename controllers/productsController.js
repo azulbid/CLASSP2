@@ -10,13 +10,19 @@ let productsController = {
       
         },
   
-      show: function(req,res){
-          return res.send('Detalle de una obra') 
+     show: function(req,res){
+         return res.send('Detalle de una obra') 
       },
+
+   // edit: function(req,res){
+     // return res.render('product-add',{
+       // datosUsuario: db.usuario
+     // })
+    
   
-     // detail: function(req,res){
-       //   return res.send('Bio del heroe'): cambiar bio del heroe por lo que querramos; ej. foto
-     // }
+//     detail: function(req,res){
+//         return res.render('product')
+//     }
 }
 
 module.exports = productsController;
