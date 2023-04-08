@@ -21,7 +21,7 @@
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
 					<a href="index.ejs" class="main-header_home-link">
-						<img src="../images/logo-mercado-liebre.svg">
+						<img src="../public/images/loniaz.png">
 					</a>
 				</div>
 	
@@ -77,7 +77,7 @@
 	<!--
 	 Banner -->
 	<div class="banner">
-		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+		<img src="../public/images/arte-home.jpeg" alt="Banner de ofertas">
 	</div>
 	<!-- /Banner -->
 
@@ -85,22 +85,21 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Novedades</h2>
+				<h2 class="products-title">Obras de arte más buscadas</h2>
 			</div>
 		
 			
 			<section>
-			<% for (let i=0; i<4; i++) { %>
+			<% for (let i=0; i<5; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 						<section class="product-box">
 							<a href= "/products/id/<%=lista[i].id%>">
 								<figure class="product-box_image">
-									<img src="<%= lista[i].imagen%>" alt="cafetera moulinex">
+									<img src="<%=lista[i].imagen%>" alt="<%=lista[i].nombre%>">
 								</figure>
 								<article class="product-box_data">
 									<h2> <%= lista[i].nombre%> </h2>
-									<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-										delectus ex</p>
+									<p><%= lista[i].Técnica%></p>
 									<p>Comentarios: 12</p>
 								</article>
 							</a>

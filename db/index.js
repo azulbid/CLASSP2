@@ -6,7 +6,7 @@ let products = {
 		Técnica: "Escultura de Mármol",
 		Dimensiones: "211 cm de alto",
         Creación: "130 a. C.-100 a. C.",
-		imagen: '/imagenes/venusdemilo.webp'
+		imagen: '/images/venusdemilo.webp',
 	}, {
 		id: 2,
 		nombre: "Apolo y Dafne",
@@ -16,11 +16,11 @@ let products = {
 		Creación: "entre 1615 y 1620",
 	}, {
 		id: 3,
-		nombre: "Autorretrato",
-		Artista: "Alberto Durero",
-		Técnica: "Escultura de Mármol",
-		Dimensiones: "211 cm de alto",
-        Creación: "130 a. C.-100 a. C.",
+		nombre: "La Gioconda o Monna Lisa",
+		Artista: "Leonardo da Vinci",
+		Técnica: "Pintura al óleo sobre tabla de álamo",
+		Dimensiones: "79 cm × 53 cm",
+        Creación: "	1503-1519.",
 
 	}, {
 		id: 4,
