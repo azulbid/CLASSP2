@@ -14,6 +14,7 @@ let products = {
         Técnica: "Óleo sobre cobre fijado en tabla",
         Dimensiones:"17.5 cm × 35.5 cm",
 		Creación: "entre 1615 y 1620",
+		imagen: '/images/apollo_d.jpeg',
 	}, {
 		id: 3,
 		nombre: "La Gioconda o Monna Lisa",
@@ -21,6 +22,7 @@ let products = {
 		Técnica: "Pintura al óleo sobre tabla de álamo",
 		Dimensiones: "79 cm × 53 cm",
         Creación: "	1503-1519.",
+		imagen: '/images/lamona.jpeg',
 
 	}, {
 		id: 4,
@@ -29,6 +31,7 @@ let products = {
 		Técnica: "Óleo sobre vitela (pergamino) pegado a una tela",
 		Dimensiones: "56,5 cm × 44,5 cm",
         Creación: "130 a. C.-100 a. C.",
+		imagen: '/images/autorretrato.jpg',
 
 	}, 
 {
@@ -38,7 +41,7 @@ let products = {
 		Técnica: "Óleo sobre lienzo",
 		Dimensiones: "196 cm × 385 cm.",
         Creación: "1535-1540",
-
+		imagen: '/images/venusdelpardo.jpg',
 
 	}, 
 
