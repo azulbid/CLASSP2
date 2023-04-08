@@ -14,15 +14,15 @@ let productsController = {
          return res.send('Detalle de una obra') 
       },
 
-   // edit: function(req,res){
-     // return res.render('product-add',{
-       // datosUsuario: db.usuario
-     // })
+     add: function(req,res){
+          return res.render('product-add',{
+          datosUsuario: db.usuario
+     })
     
   
 //     detail: function(req,res){
 //         return res.render('product')
 //     }
-}
+}}
 
-module.exports = productsController;
+module.exports = productsController
