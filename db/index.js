@@ -2,9 +2,9 @@ let products = {
 	usuario: {
 		nombreUsuario: 'NinuchaDeSanlorenzo',
 		clave: 'Vivone',
-		email: 'ninucha@gmail.com'
-		//fechaNac: 08-07-03,
-		//dni: 44360558,
+		email: 'ninucha@gmail.com',
+		fechaNac: 08-07-03,
+		dni: 44360558,
 		//fotoPerfil
 	},
     lista: [{
@@ -51,9 +51,17 @@ let products = {
         Creación: "1535-1540",
 		imagen: '/images/venusdelpardo.jpg',
 
-	}, 
+	}
+    ],
 
-    ]
+	comentarios: [
+		{nombreUsuario: 'VIVONECRACK',
+		textoComentario: "Me encantan los detalles de la obra!",
+		},
+		{nombreUsuario:'MARIA_DIOSA',
+		textoComentario: 'Los colores me fascinan! La quiero en mi cocina!',
+		}
+	]
 }
 
 module.exports = products;
