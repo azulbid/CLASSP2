@@ -70,6 +70,7 @@ hr {
   padding: 15px 0;
   background-image: url(/images/arte-home.jpeg) ;
   background-position: center bottom 23%;
+  background-position-x: 545px;
 }
 
 .main-header_home-link,
