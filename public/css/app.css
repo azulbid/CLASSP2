@@ -68,9 +68,10 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-image: url(/images/arte-home.jpeg) ;
+  background-color: black ;
   background-position: center bottom 23%;
   background-position-x: 545px;
+  color: white;
 }
 
 .main-header_home-link,
@@ -153,7 +154,14 @@ hr {
 }
 
 
-
+/*====== Banner ======*/
+.banner {
+  background-image: url(/images/img-home-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100px;
+}
 
 
 

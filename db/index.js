@@ -22,7 +22,7 @@ let products = {
         Técnica: "Óleo sobre cobre fijado en tabla",
         Dimensiones:"17.5 cm × 35.5 cm",
 		Creación: "entre 1615 y 1620",
-		imagen: '/images/apollo_d.jpeg',
+		imagen: '/images/2150 1 Bernini-Apolo y Dafne-Galería Borghese Roma.jpeg',
 	}, {
 		id: 3,
 		nombre: "La Gioconda o Monna Lisa",
