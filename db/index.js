@@ -1,5 +1,15 @@
 let products = {
-	
+	usuario :  { 
+
+			id: 1,
+			nombreUsuario: 'NinuchaDeSanlorenzo',
+			clave: 'Vivone`',
+			email: 'ninucha@gmail.com',
+			fechaNac: 08-07-03,
+			dni: 44360558,
+			//fotoPerfil
+		},
+
     lista: [{
 		id: 1,
 		nombre: "Venus de Milo",
