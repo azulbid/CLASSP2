@@ -11,7 +11,7 @@ let productsController = {
         },
   
      show: function(req,res){
-         return res.send('Detalle de una obra') 
+         return res.render('product') 
       },
 
      add: function(req,res){
