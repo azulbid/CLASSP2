@@ -28,6 +28,7 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/register', registerRouter)
 app.use('/profile', profileRouter)
+app.use('/profile-edit', profileRouter)
 app.use('/search-results', searchResultsRouter)
 
 // catch 404 and forward to error handler
