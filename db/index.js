@@ -39,7 +39,7 @@ let products = {
 		Técnica: "Óleo sobre vitela (pergamino) pegado a una tela",
 		Dimensiones: "56,5 cm × 44,5 cm",
         Creación: "130 a. C.-100 a. C.",
-		imagen: '/images/autorretrato.jpg',
+		imagen: '/images/autorretrato.jpeg',
 
 	}, 
 {
@@ -49,7 +49,7 @@ let products = {
 		Técnica: "Óleo sobre lienzo",
 		Dimensiones: "196 cm × 385 cm.",
         Creación: "1535-1540",
-		imagen: '/images/venusdelpardo.jpg',
+		imagen: '/images/venusdelpardo.jpeg',
 
 	}
     ],
