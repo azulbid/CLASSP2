@@ -30,6 +30,7 @@ body {
   font-family: var(--base-font-family);
   font-weight: 300;
   background-color: var(--light-gray);
+  background-color:#666666;
 }
 
 ul,
@@ -68,7 +69,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: black ;
+  background-color: rgb(0, 0, 0) ;
   background-position: center bottom 23%;
   background-position-x: 545px;
   color: white;
@@ -169,6 +170,7 @@ hr {
 .products-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
+  
 }
 
 .products-title {
@@ -183,7 +185,15 @@ hr {
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
+  
 
+}
+
+.bloque {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px;
+overflow: scroll;
 }
 .col-12 {
   display: inline-block;
@@ -269,10 +279,13 @@ hr {
   background-color: #ffffff;
   padding: 20px 0;
   margin-top: 80px;
+ 
 }
+
 
 .footer-data {
   text-align: center;
+  
 }
 
 .footer-data i {
@@ -284,7 +297,12 @@ hr {
   color: var(--gray);
   font-size: 2.4em;
   font-weight: 400;
+  color: white;
 }
+.texto {
+  color: white;
+}
+
 
 .footer-data p {
   color: var(--gray);
