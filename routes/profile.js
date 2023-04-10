@@ -3,6 +3,6 @@ let profileController = require('../controllers/profileController');
 var router = express.Router();
 
 router.get('/', profileController.det);
-router.get('/edit', profileController.edit);
+router.get('/editar', profileController.edit);
 
 module.exports = router; 
