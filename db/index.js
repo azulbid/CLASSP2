@@ -15,6 +15,7 @@ let products = {
 		Dimensiones: "211 cm de alto",
         Creación: "130 a. C.-100 a. C.",
 		imagen: '/images/venusdemilo.webp',
+		comentarios: 'Muy buena!'
 	}, {
 		id: 2,
 		nombre: "Apolo y Dafne",
@@ -23,6 +24,7 @@ let products = {
         Dimensiones:"17.5 cm × 35.5 cm",
 		Creación: "entre 1615 y 1620",
 		imagen: '/images/apollo_d.jpeg',
+		comentarios: 'Muy buena!'
 	}, {
 		id: 3,
 		nombre: "La Gioconda o Monna Lisa",
@@ -31,7 +33,7 @@ let products = {
 		Dimensiones: "79 cm × 53 cm",
         Creación: "	1503-1519.",
 		imagen: '/images/lamona.jpeg',
-
+		comentarios: 'Muy buena!'
 	}, {
 		id: 4,
 		nombre: "Autorretrato",
@@ -40,7 +42,7 @@ let products = {
 		Dimensiones: "56,5 cm × 44,5 cm",
         Creación: "130 a. C.-100 a. C.",
 		imagen: '/images/autorretrato.jpeg',
-
+		comentarios: 'Muy buena!'
 	}, 
 {
 		id: 5,
@@ -50,18 +52,11 @@ let products = {
 		Dimensiones: "196 cm × 385 cm.",
         Creación: "1535-1540",
 		imagen: '/images/venusdelpardo.jpeg',
-
+		comentarios: 'Muy buena!'
 	}
     ],
 
-	comentarios: [
-		{nombreUsuario: 'VIVONECRACK',
-		textoComentario: "Me encantan los detalles de la obra!",
-		},
-		{nombreUsuario:'MARIA_DIOSA',
-		textoComentario: 'Los colores me fascinan! La quiero en mi cocina!',
-		}
-	],
+	
 /* cambiar la info de mascomentados */
 	mascomentados : [ {
 			id: 1,
