@@ -478,7 +478,7 @@ textarea.form-input {
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
-  .main-header_credit-link {
+r_credit-link {
     margin-top: 0;
     text-align: right;
   }
