@@ -11,7 +11,10 @@ let productsController = {
         },
   
      show: function(req,res){
-         return res.render('product') 
+         return res.render('product',{ 
+         comentarios : products.comment,
+         lista: products.lista
+         })
       },
 
      add: function(req,res){
