@@ -27,6 +27,38 @@
 				<a href="/product/edit/id/">Editar</a>
 			</p>
 		</div>
+
+
+		<section class="col-12 col-lg-4">
+			<% for (let i=0; i<comentarios.length; i++) { %>
+					<div class="comments">
+							<a href= "/products/detalle/id/<%=comentarios[i].id%>">
+								<p class="user">
+									<strong> <a href="profile.ejs"><%=comentarios[i].user%></a> </strong>
+									<%=comentarios[i].comment%></p>
+								<article class="product-box_data">
+									
+								</article>
+							</a> </div>
+				<% } %> </section>
+
+
+				<div class="col-12 col-lg-4">
+					<section class="comments">
+						<article>
+							<img src="https://via.placeholder.com/35" alt="">
+							<div class="data">
+								<p class="user">
+								<strong> <a href="profile.ejs">Nombre usuario: LOLO123</a> </strong>
+								 Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
+							</div>
+
+
+
+		</div>	</section>
+	
+
+
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
@@ -37,6 +69,9 @@
 						Fue creada en algún momento entre los años 130 a. C. y 100 a. C., y se cree que representa a Afrodita (denominada Venus en la mitología romana), diosa del amor y la belleza;2 mide, aproximadamente, 211 cm de alto.
 </p>
 				</article>
+
+
+
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
