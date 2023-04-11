@@ -1,5 +1,5 @@
 let products = {
-	usuario :  { 
+	usuario: { 
 
 			id: 1,
 			nombreUsuario: 'NinuchaDeSanlorenzo',
@@ -57,38 +57,11 @@ let products = {
 		imagen: '/images/venusdelpardo.jpeg',
 		comentarios: 'Muy buena!'
 	}
-    ],
+    ],}
 
-	comentarios: [{
-		id: 1,
-		user: 'Jano',
-		comment: 'Muy buena obra!',
-	},
-	{
-		id: 2,
-		user: 'Santino',
-		comment: 'WOW!',
-	},
-	{
-		id: 3,
-		user: 'Miranda',
-		comment: 'Sobrevalorada!!!!!!'
-	},
-	{
-		id: 4,
-		user: 'Juli',
-		comment: 'AMOOOOOO!',
-	},
-	{
-		id: 5,
-		user: 'Uma',
-		comment: 'Malisima!!!!!!'
-	}
-],
 
-	
-/* cambiar la info de mascomentados */
-	mascomentados: [ {
+/*let masco = {
+	mascomentadas: [ {
 			id: 1,
 			nombre: "La creación de Adan",
 			Artista: "Miguel Angel",
@@ -135,5 +108,39 @@ let products = {
 		}
 	],
 }
+
+let comments = {
+	comentarios: [
+	{
+		id: 1,
+		user: 'Jano',
+		comment: 'Muy buena obra!',
+	},
+	{
+		id: 2,
+		user: 'Santino',
+		comment: 'WOW!',
+	},
+	{
+		id: 3,
+		user: 'Miranda',
+		comment: 'Sobrevalorada!!!!!!'
+	},
+	{
+		id: 4,
+		user: 'Juli',
+		comment: 'AMOOOOOO!',
+	},
+	{
+		id: 5,
+		user: 'Uma',
+		comment: 'Malisima!!!!!!'
+	}
+	],}
+
+
+*/
 module.exports = products;
+//module.exports = masco;
+//module.exports = comments;
 
