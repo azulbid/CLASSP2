@@ -1,3 +1,14 @@
+let usuario = [{
+			id: 1,
+			nombreUsuario: 'NinuchaDeSanlorenzo',
+			clave: 'Vivone`',
+			email: 'ninucha@gmail.com',
+			fechaNac: 08 - 07 - 03,
+			dni: 44360558,
+			//fotoPerfil
+		}]
+
+
 /*
 	mascomentadas: [ {
 			id: 1,
@@ -80,6 +91,6 @@ let comments = {
 
 */
 
-module.exports = masco;
+module.exports = usuario;
 //module.exports = comments;
 
