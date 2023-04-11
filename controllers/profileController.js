@@ -1,10 +1,9 @@
 //PERFIL
-let db = require('../db/index.js');
-let usu = require('../db/usuario.js')
+let db = require('../db/datos');
 let profileController = {
     det: function(req,res){
         return res.render('profile', {
-            datosUsuario: db.usuario, list: db.lista, comentarios: db.comentarios 
+            datosUsuario: db.usuario, lista: db.productos, comentarios: db.comentarios 
         })
     },
     edit: function(req,res){
