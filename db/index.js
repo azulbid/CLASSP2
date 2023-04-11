@@ -60,7 +60,7 @@ let products = {
 		comentarios: 'Muy buena!'
 	},
 	{
-		id: 1,
+		id: 6,
 		nombre: "La creación de Adan",
 		Artista: "Miguel Angel",
 		Técnica: "Acrilico",
@@ -68,7 +68,7 @@ let products = {
 		Creación: "130 a. C.-100 a. C.",
 		imagen: '/images/adan.png',
 	}, {
-		id: 2,
+		id: 7,
 		nombre: "Nenúfares",
 		Artista: "Monet",
 		Técnica: "Óleo sobre cobre fijado en tabla",
@@ -76,7 +76,7 @@ let products = {
 		Creación: "entre 1615 y 1620",
 		imagen: '/images/nenufares.png',
 	}, {
-		id: 3,
+		id: 8,
 		nombre: "La joven de la perla",
 		Artista: "Vermeer",
 		Técnica: "Pintura al óleo sobre tabla de álamo",
@@ -85,7 +85,7 @@ let products = {
 		imagen: '/images/lajoven.png',
 
 	}, {
-		id: 4,
+		id: 9,
 		nombre: "La noche estrellada",
 		Artista: "Vincent van Gogh",
 		Técnica: "Óleo sobre vitela (pergamino) pegado a una tela",
@@ -95,7 +95,7 @@ let products = {
 
 	},
 	{
-		id: 5,
+		id: 10,
 		nombre: "El beso",
 		Artista: "Klimt",
 		Técnica: "Óleo sobre lienzo",
