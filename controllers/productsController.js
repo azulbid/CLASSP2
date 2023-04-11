@@ -4,7 +4,7 @@ let products = require('../db/index');
 
 let productsController = {
     index: function(req,res){ 
-          return res.render('index',{
+          return res.render('',{
             lista: products.lista
           })
       
