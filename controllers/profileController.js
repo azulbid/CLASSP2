@@ -3,7 +3,7 @@ let db = require('../db/index');
 let profileController = {
     det: function(req,res){
         return res.render('profile', {
-            datosUsuario: db.usuario, lista: db.productos, comentarios: db.comentarios 
+            datosUsuario: db.usuario, lista: db.lista, comentarios: db.comentarios 
         })
     },
     edit: function(req,res){
