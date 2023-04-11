@@ -1,4 +1,4 @@
-let masco = {
+/*
 	mascomentadas: [ {
 			id: 1,
 			nombre: "La creación de Adan",
