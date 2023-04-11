@@ -28,36 +28,6 @@
 			</p>
 		</div>
 
-<!--
-		<section class="col-12 col-lg-4">
-			<% for (let i=0; i<5; i++) { %>
-					<div class="comments">
-							<a href= "/products/detalle/id/<%=comentarios[i].id%>">
-								<p class="user">
-									<strong> <a href="profile.ejs"><%=comentarios[i].user%></a> </strong>
-									<%=comentarios[i].comment%></p>
-								<article class="product-box_data">
-									
-								</article>
-							</a> </div>
-				<% } %> </section>
-
-
-				<div class="col-12 col-lg-4">
-					<section class="comments">
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile.ejs">Nombre usuario: LOLO123</a> </strong>
-								 Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
-							</div>
-
-
-
-		</div>	</section>
-	
-	-->
 
 		<div class="product-detail">
 			<div class="row">
@@ -67,54 +37,23 @@
 						La Afrodita de Milo (en griego, Αφροδίτη της Μήλου), más conocida como Venus de Milo,
 						es una de las estatuas más representativas del periodo helenístico de la escultura griega, y una de las más famosas esculturas de la antigua Grecia. 
 						Fue creada en algún momento entre los años 130 a. C. y 100 a. C., y se cree que representa a Afrodita (denominada Venus en la mitología romana), diosa del amor y la belleza;2 mide, aproximadamente, 211 cm de alto.
-</p>
+					</p>
 				</article>
 
-
-
-				<div class="col-12 col-lg-4">
-					<section class="comments">
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile.ejs">Nombre usuario: LOLO123</a> </strong>
-								 Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.ejs">Nombre usuario: JUANITAX17 </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur.</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.ejs">Nombre usuario: COLECCIONISTA2022</a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.ejs">Nombre usuario: GLADYS08</a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet.</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.ejs">Nombre usuario: VIVONECRACK07</a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore</p>
-							</div>
+				<section class="comments">
+					<% for (let i=0; i<5; i++) { %>
+						<div class="col-12 col-lg-4">
+								<a href= "/products/detalle/id/<%=comentarios[i].id%>">
+									<p class="user">
+										<strong> <a href="profile.ejs"><%=comentarios[i].user%></a> </strong>
+										<%=comentarios[i].comment%></p>
+									<article class="product-box_data">
+										
+									</article>
+								</a> </div>
+					<% } %> 
+				</section>
+						
 						</article>
 
 					</section>
