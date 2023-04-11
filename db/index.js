@@ -1,13 +1,17 @@
 let products = {
-	usuario: [{
-		id: 1,
-		nombreUsuario: 'NinuchaDeSanlorenzo',
-		clave: 'Vivone`',
-		email: 'ninucha@gmail.com',
-		fechaNac: 08 - 07 - 03,
-		dni: 44360558,
-		//fotoPerfil
-	}],
+	usuario: [
+		{
+
+			id: 1,
+			nombreUsuario: 'NinuchaDeSanlorenzo',
+			clave: 'Vivone`',
+			email: 'ninucha@gmail.com',
+			fechaNac: 08 - 07 - 03,
+			dni: 44360558,
+			//fotoPerfil
+		}
+	],
+
 	lista: [{
 		id: 1,
 		nombre: "Venus de Milo",
@@ -54,9 +58,8 @@ let products = {
 		Creación: "1535-1540",
 		imagen: '/images/venusdelpardo.jpeg',
 		comentarios: 'Muy buena!'
-	}],
-
-	comment: [ {
+	},
+	{
 		id: 1,
 		nombre: "La creación de Adan",
 		Artista: "Miguel Angel",
@@ -69,7 +72,7 @@ let products = {
 		nombre: "Nenúfares",
 		Artista: "Monet",
 		Técnica: "Óleo sobre cobre fijado en tabla",
-		Dimensiones:"17.5 cm × 35.5 cm",
+		Dimensiones: "17.5 cm × 35.5 cm",
 		Creación: "entre 1615 y 1620",
 		imagen: '/images/nenufares.png',
 	}, {
@@ -90,8 +93,8 @@ let products = {
 		Creación: "130 a. C.-100 a. C.",
 		imagen: '/images/lanocheestrellada.png',
 
-	}, 
-{
+	},
+	{
 		id: 5,
 		nombre: "El beso",
 		Artista: "Klimt",

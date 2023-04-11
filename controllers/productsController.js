@@ -12,7 +12,7 @@ let productsController = {
   
      show: function(req,res){
          return res.render('product',{ 
-         comentarios : products.comment,
+         comentarios : products.comentarios,
          lista: products.lista
          })
       },

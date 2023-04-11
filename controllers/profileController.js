@@ -1,5 +1,5 @@
 //PERFIL
-let db = require('../db/datos');
+let db = require('../db/index');
 let profileController = {
     det: function(req,res){
         return res.render('profile', {
