@@ -1,7 +1,7 @@
 let usuario = {
 			id: 1,
 			nombreUsuario: 'NinuchaDeSanlorenzo',
-			clave: 'Vivone`',
+			clave: 'Vivone',
 			email: 'ninucha@gmail.com',
 			fechaNac: 08 - 07 - 03,
 			dni: 44360558,

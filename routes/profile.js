@@ -4,7 +4,6 @@ var router = express.Router();
 
 router.get('/', profileController.det);
 router.get('/editar', profileController.edit);
-router.get('/usuario', profileController.usuario);
 
 router.get('/profile-edit', profileController.edit);
 
