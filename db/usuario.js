@@ -1,4 +1,4 @@
-let usuario = [{
+let usuario = {
 			id: 1,
 			nombreUsuario: 'NinuchaDeSanlorenzo',
 			clave: 'Vivone`',
@@ -6,7 +6,7 @@ let usuario = [{
 			fechaNac: 08 - 07 - 03,
 			dni: 44360558,
 			//fotoPerfil
-		}]
+		}
 
 
 /*

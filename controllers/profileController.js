@@ -1,5 +1,6 @@
 //PERFIL
 let db = require('../db/index');
+let usu = require('../db/usuario')
 let profileController = {
     det: function(req,res){
         return res.render('profile', {
@@ -9,6 +10,11 @@ let profileController = {
     edit: function(req,res){
         return res.render('profile-edit', {
             datosUsuario: db.usuario
+        })
+    },
+    usuario: function(req,res){
+        return res.render('usuario',{
+            usuario: usu.usuario
         })
     },
 
