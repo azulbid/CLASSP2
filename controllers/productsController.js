@@ -1,8 +1,6 @@
 //PRODUCTO 
 
 let products = require('../db/index');
-let usu = require('../db/usuario')
-
 
 let productsController = {
     index: function(req,res){ 
