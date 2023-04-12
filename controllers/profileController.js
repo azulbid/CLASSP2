@@ -10,7 +10,7 @@ let profileController = {
     },
     edit: function(req,res){
         return res.render('profile-edit', {
-            datosUsuario: db.usuario
+            usuario: usu.nombreUsuario
         })
     },
 
