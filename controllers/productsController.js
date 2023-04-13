@@ -28,9 +28,7 @@ let productsController = {
      })
     
   
-//     detail: function(req,res){
-//         return res.render('product')
-//     }
+
 }}
 
 module.exports = productsController
