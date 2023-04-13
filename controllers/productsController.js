@@ -9,11 +9,7 @@ let productsController = {
           })
       
         },
-       edit: function(req,res){ 
-          return res.render('edit/id/',{
-            datosUsuario: products.usuario
-          })
-        },
+
         
      show: function(req,res){
          return res.render('product',{ 
