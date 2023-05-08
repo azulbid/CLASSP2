@@ -1,10 +1,14 @@
+//en app.js definimos routers y dependiendo de las solicitudes de url se definen los archivos de rutas convenientes
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//esto 
 var indexRouter = require('./routes/index');
+//aca declaramos una variable utilizando la funcion de node.js require para importar un archivo que se encuentra en la ruta .routes/index
 var usersRouter = require('./routes/users');
 let productsRouter = require('./routes/products')
 let registerRouter = require('./routes/register')
@@ -23,7 +27,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//esto 
 app.use('/', indexRouter);
+//El segundo argumento indica que todas las solicitudes que coincidan con el prefijo de URL especificado se manejarán utilizando las rutas definidas en este objeto Router.
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/register', registerRouter)
