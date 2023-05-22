@@ -1,4 +1,4 @@
-let products = {
+let products = { //definimos un objeto literal con un array de obras en donde cada posicion del array contiene un objeto literal con las propiedades que le corresponden de cada obra
 	usuario: [
 		{
 
@@ -137,6 +137,6 @@ let products = {
 
 
 
-module.exports = products;
+module.exports = products; //para hacer uso de este fragmento de codigo hay que hacer uso del objeto NATIVO module y de su propiedad .exports de esta manera exportamos modulos asignandole la variable
 
 
