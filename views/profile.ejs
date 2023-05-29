@@ -16,7 +16,11 @@
 </head>
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	<% if(locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado.ejs') %>
+<% } else { %>
+   <%- include('./partials/header.ejs') %>
+<% } %>
 	</header>
 	<!-- /Header -->
 

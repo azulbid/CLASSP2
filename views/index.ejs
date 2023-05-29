@@ -18,11 +18,12 @@
 
 <body>
 	<!-- Header -->
-	<% if(locals.user != undefined) {
-		<%- include('./partials/headerLogueado.ejs') %>
-} else {
+	 <% if(locals.user != undefined) { %>
+		 <%- include('./partials/headerLogueado.ejs') %>
+<% } else { %>
 	<%- include('./partials/header.ejs') %>
-}
+<% } %>
+ 
 		<!-- /Header -->
 
 		<!-- Banner -->

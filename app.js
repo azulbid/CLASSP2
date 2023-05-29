@@ -5,6 +5,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session'); //requerimos session en el entrypoint
+
 
 //esto 
 var indexRouter = require('./routes/index');
@@ -58,7 +60,6 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-const session = require('express-session'); //requerimos session en el entrypoint
 
 
 
