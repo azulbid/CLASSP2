@@ -43,6 +43,9 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+const session = require('express-session'); //requerimos session en el entrypoint
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
