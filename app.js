@@ -27,8 +27,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session(
+{
+  secret:"Lorniaz",
+  saveUninitialized: true,
+  resave: false
+}
+));
 
-//esto 
+//middleware
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+    return next ();
+  }
+return next ();
+})
+//la sesion se indica antes de las rutas
 app.use('/', indexRouter);
 //El segundo argumento indica que todas las solicitudes que coincidan con el prefijo de URL especificado se manejarán utilizando las rutas definidas en este objeto Router.
 app.use('/users', usersRouter);
@@ -44,6 +59,7 @@ app.use(function(req, res, next) {
 });
 
 const session = require('express-session'); //requerimos session en el entrypoint
+
 
 
 // error handler
