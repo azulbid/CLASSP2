@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes){
             type:dataTypes.STRING
         },
         fotodeperfil : {
-            type:dataTypes.INTEGER
+            type:dataTypes.TEXT
         },
         fecha : {
             type:dataTypes.DATE

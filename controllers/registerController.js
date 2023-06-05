@@ -28,7 +28,10 @@ store: function(req, res){
         let user = {
             email:form.email,
             name: form.username,
-            password: bcryptjs.hashSync(form.password, 10),
+            dni: form.dni,
+            fecha: form.fecha,
+            fotodeperfil: form.fotodeperfil,
+            contrasena: bcryptjs.hashSync(form.contrasena, 10),
             remember_token: null
         }
         //return res.send(user);
