@@ -39,7 +39,7 @@ store: function(req, res){
         db.User.create(user) //Pasar un objeto literal con los datos a guardar.
             .then(function(usuarioCreado){ //retorna el elemento creado
                 //Dentro del then debería redireccionar a otra ruta.
-                return res.redirect('/users');
+                return res.redirect('/users/login');
             })
             .catch(function(e){
                 console.log(e);
