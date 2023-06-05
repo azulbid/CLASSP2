@@ -1,17 +1,23 @@
 module.exports = function(sequelize, dataTypes){
-    let alias = 'Movie' //es el nombre del modelo en el controlador
+    let alias = 'User' //es el nombre del modelo en el controlador
     let cols = {
         id :{
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        title: {
+        email: {
             type: dataTypes.STRING
         },
-        length : {
+        contrasena : {
+            type:dataTypes.STRING
+        },
+        fotodeperfil : {
             type:dataTypes.INTEGER
         },
-        genre_id : {
+        fecha : {
+            type:dataTypes.DATE
+        },
+        dni : {
             type:dataTypes.INTEGER
         },
         created_At: {
@@ -22,8 +28,8 @@ module.exports = function(sequelize, dataTypes){
         }
     }
     let config = {
-        tableName: 'movies',
+        tableName: 'usuarios',
     }
-    let movie = sequelize.define(alias,cols,config);
-    return movie
+    let user = sequelize.define(alias,cols,config);
+    return user
 }
