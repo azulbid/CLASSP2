@@ -1,6 +1,6 @@
 // LOG IN
 let db = require("../database/models");
-let op = db.Sequelize.Op;
+let op = db.Sequelize.Op; //no lo estamos usando 
 let bcryptjs = require('bcryptjs');
 
 let usersController = {
