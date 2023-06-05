@@ -1,7 +1,7 @@
 //REGISTRO
 let db = require('../database/models')
-
-let registerController = {
+let bcryptjs = require('bcryptjs');
+let registerControlller = {
     register: function(req, res){
         res.render('register');
     },
@@ -17,7 +17,7 @@ store: function(req, res){
     let user = {
         email:form.email,
         name: form.username,
-        password: form.password,
+        password: bcryptjs.hashSync(form.password, 10)
     }
 
     //Usar un método de Sequelize para guardar datos.
