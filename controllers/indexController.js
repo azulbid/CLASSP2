@@ -6,7 +6,7 @@ let db = require('../db/index.js') //importamos un modulo  llamado 'index.js' de
 let indexController = {
     index: function(req,res){
         res.render('index',{  //se renderiza index (views)
-            lista: db.lista, comment: db.comment
+            lista: db.lista, comment: db.comment, usuario: db.usuario
         })
     },
     }
