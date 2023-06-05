@@ -1,7 +1,7 @@
 //REGISTRO
 let db = require('../database/models')
 let bcryptjs = require('bcryptjs');
-let registerControlller = {
+let registerController = {
     register: function(req, res){
         res.render('register');
     },
