@@ -4,7 +4,7 @@ let op = db.Sequelize.Op;
 let bcryptjs = require('bcryptjs');
 
 let usersController = {
-    users: function(req,res){
+    loginForm: function(req,res){
         if(req.session.user != undefined) {
             return res.redirect("/")
         }
@@ -12,7 +12,9 @@ let usersController = {
         return res.render('login')};
 
     },
-    process: function(req,res){
+
+
+    loginPost: function(req,res){
 
         db.User.findOne({
 
@@ -22,18 +24,18 @@ let usersController = {
             let errores = {}
 
             if (usuarioEncontrado == null){
-                errores.message = "El email no fue escrito correctamente o no está registrado en Lorniaz"
+                errores.message = "El email no fue escrito correctamente o no está registrado en Loniaz"
                 res.locals.errors = errores;
                 return res.render('login');
             } else {
-            let comparacion = bcryptjs.compareSync(req.body.password, usuarioEncontrado.password)
+            let comparacion = bcryptjs.compareSync(req.body.contrasena, usuarioEncontrado.contrasena)
 
             if(comparacion){
                 req.session.user = {
                     email: usuarioEncontrado.email,
                     username: usuarioEncontrado.user,
                     } 
-                    if(req.body.recordarme != undefined){
+                    if(req.body.checkbox != undefined){
                         res.cookie('cookieEspecial', 'dato a guardar', {maxAge: 1000 * 912912912912912912})
                     }
                 

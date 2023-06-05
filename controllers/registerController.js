@@ -27,7 +27,7 @@ store: function(req, res){
         //Encriptar la contraseña antes de guardar en la base de datos.
         let user = {
             email:form.email,
-            name: form.username,
+            username: form.username,
             dni: form.dni,
             fecha: form.fecha,
             fotodeperfil: form.fotodeperfil,
