@@ -1,4 +1,4 @@
-// MAIN
+// MAIN 
 
 let db = require('../db/index.js') //importamos un modulo  llamado 'index.js' desde una ruta relativa '../db/' situandonos dentro del archivo haciendo uso de la funcion de node 'require
 
