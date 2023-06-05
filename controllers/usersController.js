@@ -9,7 +9,7 @@ let usersController = {
             return res.redirect("/")
         }
         else {
-        res.render('login')};
+        return res.render('login')};
 
     },
     process: function(req,res){
