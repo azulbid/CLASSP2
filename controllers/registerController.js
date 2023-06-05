@@ -37,7 +37,7 @@ store: function(req, res){
                 //Dentro del then debería redireccionar a otra ruta.
                 console.log(usuarioCreado);
                     // return res.send(form);
-                return res.redirect('/');
+                return res.redirect('/users');
             })
             .catch(function(e){
                 console.log(e);
