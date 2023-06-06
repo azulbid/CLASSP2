@@ -4,6 +4,7 @@ USE proyectoIntegrador;
 CREATE TABLE usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR (200) NOT NULL,
+username VARCHAR (50) NOT NULL,
 contrasena VARCHAR (200) NOT NULL,
 fotodeperfil VARCHAR(200),
 fecha DATE NOT NULL,

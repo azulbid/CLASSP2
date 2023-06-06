@@ -33,11 +33,13 @@ let usersController = {
             if(comparacion){
                 req.session.user = {
                     email: usuarioEncontrado.email,
-                    username: usuarioEncontrado.user,
+                    dni: usuarioEncontrado.dni,
+                    username: usuarioEncontrado.username
                     } 
                     if(req.body.checkbox != undefined){
                         res.cookie('cookieEspecial', 'dato a guardar', {maxAge: 1000 * 912912912912912912})
                     }
+                    console.log(usuarioEncontrado)
                 
             
             return res.redirect("/");
