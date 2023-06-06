@@ -1,16 +1,16 @@
 //PERFIL
-let db = require('../db/index');
-let usu = require('../db/usuario')
-let profileController = {
+let db = require("../database/models");
+let op = db.Sequelize.Op; //no lo estamos usando
+let profileController = { 
     det: function(req,res){
         return res.render('profile', {
-            datosUsuario: db.usuario, lista: db.lista, comentarios: db.comentarios,
-             usuario: usu.nombreUsuario
-        })
+            datosUsuario: db.User, lista: db.Product, comentarios: db.Comment,
+            
+        }) 
     },
     edit: function(req,res){
         return res.render('profile-edit', {
-            usuario: usu.nombreUsuario
+            datosUsuario: db.User, lista: db.Product, comentarios: db.Comment,
         })
     },
 
