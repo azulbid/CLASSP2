@@ -17,6 +17,8 @@ store: function(req, res){
         errors.message = "El mail está vacío";
         res.locals.errors = errors;
         return res.render('register')
+        
+        
     } else if (req.body.password == ""){
         errors.message = "La clave está vacía"
         res.locals.errors = errors;
