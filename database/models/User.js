@@ -34,5 +34,9 @@ module.exports = function(sequelize, dataTypes){
         tableName: 'usuarios',
     }
     let user = sequelize.define(alias,cols,config);
+    user.hasMany(models.Product, {
+        as: 'productos',
+        foreignKey: 'id' //es id o id_post? 
+    })
     return user
 }
