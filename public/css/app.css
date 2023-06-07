@@ -177,6 +177,9 @@ form button[type="submit"] {
 button.logout {
   color: white;
 }
+form.left-navbar {
+  padding-left: 503px;
+}
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);

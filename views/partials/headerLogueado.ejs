@@ -38,11 +38,7 @@
 						</a>
 					</li>
 					<li>
-						<form action="/users/logout" method="POST">
-							<button class="logout" type="submit">
-								Cerrar sesión <i class="cerrarsesion"></i>
-							</button>
-						</form>
+						
 					</li>
 				</ul>
 
@@ -50,7 +46,12 @@
 					<li><a href="/profile/editar">Editar perfil <i class="fas fa-sign-in-alt"></i></a>
 					</li>	
 				</ul>
-		
+				
+					<form class="left-navbar" action="/users/logout" method="POST">
+							<button  type="submit">
+								Cerrar sesión <i class="cerrarsesion"></i>
+							</button>
+						</form>
 			</nav>
 		</div>
 	</header>
