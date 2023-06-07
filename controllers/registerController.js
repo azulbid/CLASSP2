@@ -23,6 +23,10 @@ store: function(req, res){
         errors.message = "La clave está vacía"
         res.locals.errors = errors;
         return res.render('register');
+    } else if (req.body.contrasena.length < 3){
+            errors.message = "La clave debe ser mas larga"
+            res.locals.errors = errors;
+            return res.render('register');
     } else {    
         let form = req.body
 
