@@ -27,7 +27,7 @@ FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 CREATE TABLE comentarios (
-id INT UNSIGNED PRIMARY ,
+id INT UNSIGNED PRIMARY KEY,
 id_post INT UNSIGNED NOT NULL,
 id_usuario INT UNSIGNED NOT NULL,
 texto_comentario TEXT NOT NULL,
