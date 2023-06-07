@@ -34,7 +34,13 @@
 			<!-- Show the "ultimos" products -->
 	
 <!-- formulario de registración -->
-	<form action="/register" method="POST" class=""> 
+	<form action="/register" method="POST" class="">
+		 <img src="/images/3201052.png" alt="" class="registrafoto">
+				
+				<% if(locals.errors){  %> 
+					<p class= “error”> <%= errors.message %> </p>
+				 <% } %>
+				 
 		<label>EMAIL</label><input id="email" class="input" type="email" name="email" placeholder="EMAIL">
 		<br>
 		<br>
@@ -53,11 +59,7 @@
 		<br><br>
 	</form>
 	
-				<img src="/images/3201052.png" alt="" class="registrafoto">
 				
-				<% if(locals.errors){  %> 
-					<p class= “error”> <%= errors.message %> </p>
-				 <% } %>
 	<!-- footer -->
 	<%- include('./partials/footer') %>
 	<!-- /footer -->

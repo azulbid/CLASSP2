@@ -13,13 +13,13 @@ register: function(req, res){
 },
 store: function(req, res){
     let errors = {};
-    if (req.body.mail == "") {
-        errors.message = "El mail está vacío";
+    if (req.body.email == "") {
+        errors.message = "ESTE CAMPO SE ENCUENTRA VACÍO, POR FAVOR INGRESE UN MAIL VÁLIDO";
         res.locals.errors = errors;
         return res.render('register')
         
         
-    } else if (req.body.password == ""){
+    } else if (req.body.contrasena== ""){
         errors.message = "La clave está vacía"
         res.locals.errors = errors;
         return res.render('register');
