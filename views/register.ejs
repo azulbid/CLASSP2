@@ -55,6 +55,9 @@
 	
 				<img src="/images/3201052.png" alt="" class="registrafoto">
 				
+				<% if(locals.errors){  %> 
+					<p class= “error”> <%= errors.message %> </p>
+				 <% } %>
 	<!-- footer -->
 	<%- include('./partials/footer') %>
 	<!-- /footer -->
