@@ -17,13 +17,21 @@ store: function(req, res){
         errors.message = "ESTE CAMPO SE ENCUENTRA VACÍO, POR FAVOR INGRESE UN MAIL VÁLIDO";
         res.locals.errors = errors;
         return res.render('register')
-        
+    } else { 
+        db.User.findOne({ where: { email: req.body.email } })
+    .then(function(user) {
+      if (user) {
+        errors.message = "El correo electrónico ya está registrado";
+        res.locals.errors = errors;
+        return res.render('register');
         
     } else if (req.body.contrasena== ""){
         errors.message = "La clave está vacía"
         res.locals.errors = errors;
         return res.render('register');
-    } else if (req.body.contrasena.length < 3){
+    
+      } 
+    else if (req.body.contrasena.lenght < 3){
             errors.message = "La clave debe ser mas larga"
             res.locals.errors = errors;
             return res.render('register');
@@ -50,7 +58,8 @@ store: function(req, res){
             .catch(function(e){
                 console.log(e);
             });
-    
+        }
+    })
     
     
     }}
