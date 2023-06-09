@@ -1,28 +1,41 @@
-//SEGUIR CON SEARCHRESULTS
-
-
 let db = require('../database/models')
 let op = db.Sequelize.Op;
 let searchResultsController = {
     showRes: function (req, res) {
         let buscado = req.query.search
         let elembusc = {
-            where: [{ nombre_producto: { [op.like]: `%${buscado}%` } }],
+            where: [{ nombreproducto: { [op.like]: `%${buscado}%` } }] || [{ descripcionproducto: {[op.like]: `%${buscado}%`}}],
             order: [['createdAt', 'ASC']],
             include: [{ association: 'comentario' }, { association: 'usuario' }]
         }
 
+      //  let elembusc2 = {
+        //    where:[{ descripcionproducto: {[op.like]: `%${buscado}%`}}],
+          //  order:[['createdAt', 'ASC']],
+            //include:[{ association: 'comentario' }, { association: 'usuario' }],
+//        }
+
     
-    db.Producto.findAll(elembusc)
-   
+    db.Product.findAll(elembusc)
         .then(function (result) { 
-            let error = {}
-            if (result.lenght = ! 0)
-            res.render('search-results', { lista: result })
+           // let error = {}
+            if (result.length != 0){
+            res.render('search-results', { lista: result })}
+            else{
+            errors.message = "No se han encontrado resultados de su búsqueda"
+            res.locals.errors = errors;
+            }
+        //        db.Product.findAll(elembusc2)
+          //      .then(function(result2){
+            //        if(result2.length != 0){
+              //          res.render('searchResults',)
+        
+               // })
+           // }
     })
-    .catch ( function(error) {
-    console.log(error)
-})
+        .catch (function(error) {
+        console.log(error)
+    })
     
 }}
 

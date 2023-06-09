@@ -62,6 +62,9 @@
 		</div>
 		</section>
 
+		<% if(locals.errors){  %> 
+			<p class= “error”> <%= errors.message %> </p>
+		 <% } %>
 
 		<!-- footer -->
 		<%- include('./partials/footer') %>
