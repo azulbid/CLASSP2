@@ -20,14 +20,13 @@ let searchResultsController = {
         .then(function (result) { 
         //   return res.send(result)
     
-            if (result.length != 0){
+            if (result.length > 0){
                 return res.render('search-results', { lista: result })
-            }
-            else{
-            let errors = {};
-            errors.message = "No se han encontrado resultados de su búsqueda"
-            res.locals.errors = errors;
-            return res.render('search-results')
+            }else{
+                let errors = {};
+                errors.message = "No se han encontrado resultados de su búsqueda"
+                res.locals.errors = errors;
+                return res.render('search-results', { lista: undefined })
             }
 
         //        db.Product.findAll(elembusc2)
