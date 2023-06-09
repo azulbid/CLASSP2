@@ -27,7 +27,7 @@ FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 CREATE TABLE comentarios (
-id INT UNSIGNED PRIMARY KEY,
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 id_post INT UNSIGNED NOT NULL,
 id_usuario INT UNSIGNED NOT NULL,
 texto_comentario TEXT NOT NULL,
@@ -60,15 +60,18 @@ VALUES(default, 4, "Nenúfares", "Los nenúfares (en francés, Les nymphéas) es
 INSERT INTO productos 
 VALUES(default, 5, "La creación de Adan", "La creación de Adán es un fresco en la bóveda de la Capilla Sixtina, pintado por Miguel Ángel alrededor del año 1511. Ilustra uno de los nueve episodios del Génesis representados allí por el artista toscano,1​ en el cual Dios le da vida a Adán, el primer hombre.", default, default, default);
 INSERT INTO productos 
-VALUES(default, 6, "Venus del Pardo", "Júpiter y Antíope (en italiano: Giove e Antiope) o Antíope sorprendida por Júpiter, más conocido como Venus del Pardo (en italiano: Venere del Pardo), es un cuadro realizado por el pintor Tiziano Vecellio. Mide 196 cm de alto y 385 cm de ancho, y está pintado al óleo sobre lienzo. Pintado hacia 1535-1540, se encuentra en el Museo del Louvre, en París, con el número de inventario INV 752.", default, default, default);
+VALUES(default, 1, "Venus del Pardo", "Júpiter y Antíope (en italiano: Giove e Antiope) o Antíope sorprendida por Júpiter, más conocido como Venus del Pardo (en italiano: Venere del Pardo), es un cuadro realizado por el pintor Tiziano Vecellio. Mide 196 cm de alto y 385 cm de ancho, y está pintado al óleo sobre lienzo. Pintado hacia 1535-1540, se encuentra en el Museo del Louvre, en París, con el número de inventario INV 752.", default, default, default);
 INSERT INTO productos
-VALUES(default, 7, "Autorretrato", "El autorretrato se define como un retrato hecho de la misma persona que lo realiza. Es uno de los ejercicios de análisis más profundos que puede hacer un artista. Implica escrutarse el rostro y conocerse hasta tal punto que la expresión que tenga en ese momento se traduzca en el dibujo o la pintura que aborda. En épocas pictóricas como el barroco o el renacimiento, una de las costumbres era que el artista se autorretratara dentro de un gran cuadro, para reafirmar su autoría o para dar a entender sus intenciones, como lo hizo Velázquez.", default, default, default);
+VALUES(default, 2, "Autorretrato", "El autorretrato se define como un retrato hecho de la misma persona que lo realiza. Es uno de los ejercicios de análisis más profundos que puede hacer un artista. Implica escrutarse el rostro y conocerse hasta tal punto que la expresión que tenga en ese momento se traduzca en el dibujo o la pintura que aborda. En épocas pictóricas como el barroco o el renacimiento, una de las costumbres era que el artista se autorretratara dentro de un gran cuadro, para reafirmar su autoría o para dar a entender sus intenciones, como lo hizo Velázquez.", default, default, default);
 INSERT INTO productos
-VALUES(default, 8, "La Gioconda", "El retrato de Lisa Gherardini, esposa de Francesco del Giocondo,1​ más conocido como La Gioconda (La Joconde en francés) o Monna Lisa, es una obra pictórica del polímata renacentista italiano Leonardo da Vinci. Fue adquirida por el rey Francisco I de Francia a comienzos del siglo xvi y desde entonces es propiedad del Estado francés. Se halla expuesta en el Museo del Louvre de París, siendo, sin duda, la «joya» de sus colecciones.", default, default, default);
+VALUES(default, 3, "La Gioconda", "El retrato de Lisa Gherardini, esposa de Francesco del Giocondo,1​ más conocido como La Gioconda (La Joconde en francés) o Monna Lisa, es una obra pictórica del polímata renacentista italiano Leonardo da Vinci. Fue adquirida por el rey Francisco I de Francia a comienzos del siglo xvi y desde entonces es propiedad del Estado francés. Se halla expuesta en el Museo del Louvre de París, siendo, sin duda, la «joya» de sus colecciones.", default, default, default);
 INSERT INTO productos 
-VALUES(default, 9, "Apolo y Dafne", "Apolo persiguiendo a Dafne o Apolo y Dafne es una pintura que Giambattista Tiepolo realizó en torno a 1755-1760. Está realizada en óleo sobre lienzo y sus dimensiones son 68,5 cm de alto y 87 de ancho. Se conserva en la Galería Nacional de Arte de Washington.", default, default, default);
+VALUES(default, 4, "Apolo y Dafne", "Apolo persiguiendo a Dafne o Apolo y Dafne es una pintura que Giambattista Tiepolo realizó en torno a 1755-1760. Está realizada en óleo sobre lienzo y sus dimensiones son 68,5 cm de alto y 87 de ancho. Se conserva en la Galería Nacional de Arte de Washington.", default, default, default);
 INSERT INTO productos 
-VALUES(default, 10, "La noche estrellada", "La noche estrellada es un óleo sobre lienzo del pintor postimpresionista neerlandés Vincent van Gogh. Pintado en junio de 1889, representa la vista desde la ventana orientada al este de su habitación de asilo en Saint-Rémy-de-Provence, justo antes del amanecer, con la adición de un pueblo imaginario.1​2​3​ Ha estado en la colección permanente del Museo de Arte Moderno de la ciudad de Nueva York desde 1941, adquirida a través de Lillie P. Bliss Bequest", default, default, default);
+VALUES(default, 5, "La noche estrellada", "La noche estrellada es un óleo sobre lienzo del pintor postimpresionista neerlandés Vincent van Gogh. Pintado en junio de 1889, representa la vista desde la ventana orientada al este de su habitación de asilo en Saint-Rémy-de-Provence, justo antes del amanecer, con la adición de un pueblo imaginario.1​2​3​ Ha estado en la colección permanente del Museo de Arte Moderno de la ciudad de Nueva York desde 1941, adquirida a través de Lillie P. Bliss Bequest", default, default, default);
+
+
+
 
 INSERT INTO comentarios 
 VALUES(default, 1, 1, "Muy interesante", default, default, default);
