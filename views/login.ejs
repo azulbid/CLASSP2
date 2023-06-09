@@ -33,8 +33,14 @@
 				<br><br><br><br><br>
 				<h2 class="products-title">Ingresar</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
+
+			
+
 			<form action="/users/login" method="POST" class=""> 
+				<% if(locals.errors){  %> 
+					<p class= “error”> <%= errors.message %> </p>
+				 <% } %>
+	
 				<label>USUARIO</label><input class="input" name ="email" type="email" placeholder="mail">
 				<br><br>
 				<label>CONTRASEÑA</label><input class="input" name="contrasena" type="password" placeholder="Contraseña">
