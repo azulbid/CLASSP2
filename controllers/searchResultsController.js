@@ -4,7 +4,8 @@ let searchResultsController = {
     showRes: function (req, res) {
         let buscado = req.query.search
         let elembusc = {
-            where: [{ nombreproducto: { [op.like]: `%${buscado}%` } }] || [{ descripcionproducto: {[op.like]: `%${buscado}%`}}],
+            where: [{ nombreproducto: { [op.like]: `%${buscado}%` } }] ,
+            //|| [{ descripcionproducto: {[op.like]: `%${buscado}%`}}],
             order: [['createdAt', 'ASC']],
             include: [{ association: 'comentarios' }, { association: 'usuario' }]
         }
@@ -18,14 +19,17 @@ let searchResultsController = {
     
     db.Products.findAll(elembusc)
         .then(function (result) { 
+            return res.send(result)
            // let error = {}
             if (result.length != 0){
-            res.render('search-results', { lista: result })}
+            res.render('search-results', { lista: result })
+            }
             else{
             let errors = {};
             errors.message = "No se han encontrado resultados de su búsqueda"
             res.locals.errors = errors;
             }
+
         //        db.Product.findAll(elembusc2)
           //      .then(function(result2){
             //        if(result2.length != 0){
