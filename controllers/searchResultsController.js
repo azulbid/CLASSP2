@@ -6,7 +6,7 @@ let searchResultsController = {
         let elembusc = {
             where: [{ nombreproducto: { [op.like]: `%${buscado}%` } }] || [{ descripcionproducto: {[op.like]: `%${buscado}%`}}],
             order: [['createdAt', 'ASC']],
-            include: [{ association: 'comentario' }, { association: 'usuario' }]
+            include: [{ association: 'comentarios' }, { association: 'usuario' }]
         }
 
       //  let elembusc2 = {
@@ -16,12 +16,13 @@ let searchResultsController = {
 //        }
 
     
-    db.Product.findAll(elembusc)
+    db.Products.findAll(elembusc)
         .then(function (result) { 
            // let error = {}
             if (result.length != 0){
             res.render('search-results', { lista: result })}
             else{
+            let errors = {};
             errors.message = "No se han encontrado resultados de su búsqueda"
             res.locals.errors = errors;
             }
