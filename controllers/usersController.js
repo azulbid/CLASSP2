@@ -37,7 +37,7 @@ let usersController = {
                     username: usuarioEncontrado.username
                     } 
                     if(req.body.checkbox != undefined){
-                        res.cookie('cookieEspecial', 'dato a guardar', {maxAge: 1000 * 912912912912912912})
+                        res.cookie('Galleta', req.session.user, {maxAge: 1000 * 912912912912912912})
                     }
                 
             
@@ -61,6 +61,7 @@ errores.message = "La contraseña es incorrecta.";
 
     logout: function(req, res){
         req.session.destroy()
+      //  res.clearCookie('Galleta')
         return res.redirect('/');
     }
 }

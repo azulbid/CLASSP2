@@ -4,7 +4,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-//let db = require('./database/models')
+let db = require('./database/models')
 var logger = require('morgan');
 const session = require('express-session'); //requerimos session en el entrypoint
 
@@ -46,6 +46,25 @@ app.use(function(req, res, next){
   }
 return next ();
 })
+
+app.use(function(req, res, next){
+  if (req.cookies.Galleta != undefined && req.session.user == undefined){
+    let datosRecordados = req.cookies.Galleta;
+
+    db.User.findByPk (datosRecordados)
+    .then((user)=>{
+      req.session.user = user.dataValues
+      req.locals.user = user.dataValues
+      return next()
+    }) .catch((err)=>{
+      console.log(err)
+    });
+  } else{
+    return next()
+  }
+}
+)
+
 //la sesion se indica antes de las rutas
 app.use('/', indexRouter);
 //El segundo argumento indica que todas las solicitudes que coincidan con el prefijo de URL especificado se manejarán utilizando las rutas definidas en este objeto Router.
@@ -76,3 +95,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
