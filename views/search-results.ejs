@@ -36,23 +36,20 @@
 
 
 				<section class="bloque">
-					<%for (let i=0; i<4; i++){ %>
+					<%for (let i=0; i<lista.length; i++){ %>
 						<div class="col-12 col-sm-6 col-lg-3">
 							<section class = 'product-box'>
 								<a href="/products/detalle/id/<%=lista[i].id%>">
 									<figure class="product-box_image">
-										<img src="<%=lista[i].imagen%>" alt="<%=lista[i].nombre%>">
+										<img src="<%= lista[i].imagen %>" alt="<%= lista[i].nombre %>">
 									</figure>
 									<article class="product-box_data">
 										<h2>
-											<%=lista[i].nombre%>
+											<%= lista[i].nombreproducto %>
 										</h2>
 										<p>
-											<%=lista[i].descripcion%>
-										</p>
-										<p>
-											<%=lista[i].comentarios%>
-										</p>
+											<%= lista[i].descripcionproducto %>
+										</p>	
 									</article>
 								</a>
 							</section>
