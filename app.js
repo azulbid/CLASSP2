@@ -4,6 +4,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+//let db = require('./database/models')
 var logger = require('morgan');
 const session = require('express-session'); //requerimos session en el entrypoint
 
@@ -37,7 +38,7 @@ app.use(session(
 }
 ));
 
-//middleware
+//middleware: pasar datos de session a las vistas
 app.use(function(req, res, next){
   if(req.session.user != undefined){
     res.locals.user = req.session.user
