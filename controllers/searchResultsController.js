@@ -1,13 +1,13 @@
 //SEGUIR CON SEARCHRESULTS
 
 
-let db = require('../db/index')
+let db = require('../database/models')
 let op = db.Sequelize.Op;
 let searchResultsController = {
     showRes: function (req, res) {
         let buscado = req.query.search
         let elembusc = {
-            where: [{ nombre_producto: { [op.like]: `%${busc}%` } }],
+            where: [{ nombre_producto: { [op.like]: `%${buscado}%` } }],
             order: [['createdAt', 'ASC']],
             include: [{ association: 'comentario' }, { association: 'usuario' }]
         }
@@ -24,8 +24,6 @@ let searchResultsController = {
     console.log(error)
 })
     
-
-res.render('search-results', { lista: db.lista })
 }}
 
 module.exports = searchResultsController
