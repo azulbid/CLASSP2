@@ -1,3 +1,6 @@
+//SEGUIR CON SEARCHRESULTS
+
+
 let db = require('../db/index')
 let op = db.Sequelize.Op;
 let searchResultsController = {
