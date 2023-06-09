@@ -11,7 +11,7 @@ fecha DATE NOT NULL,
 dni  INT NOT NULL,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-deletedAt TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+deletedAt TIMESTAMP NULL
 );
 
 
@@ -22,7 +22,7 @@ nombreproducto VARCHAR (200) NOT NULL,
 descripcionproducto VARCHAR (800) NOT NULL,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-deletedAt TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+deletedAt TIMESTAMP NULL,
 FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
@@ -39,15 +39,15 @@ FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 INSERT INTO usuarios 
-VALUES(DEFAULT, "ninateller@gmail.com" , "ninucha08", "Foto", "2003-07-08", 44937782, DEFAULT, DEFAULT, DEFAULT);
+VALUES(DEFAULT, "ninateller@gmail.com" , "ninucha08", "1234", "Foto", "2003-07-08", 44937782, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO usuarios 
-VALUES(DEFAULT, "azulbid@gmail.com" , "juanita04", "Foto", "2002-07-17", 44837452, DEFAULT, DEFAULT, DEFAULT);
+VALUES(DEFAULT, "azulbid@gmail.com" , "juanita04",  "1234", "Foto", "2002-07-17", 44837452, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO usuarios 
-VALUES(DEFAULT, "loloriber@gmail.com" , "lolodelab", "Foto", "2004-01-08", 45524367, DEFAULT, DEFAULT, DEFAULT);
+VALUES(DEFAULT, "loloriber@gmail.com" , "lolodelab", "1234", "Foto", "2004-01-08", 45524367, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO usuarios 
-VALUES(DEFAULT, "nestorortigoza@gmail.com" , "cuervo1908", "Foto", "1983-09-08", 25876456, DEFAULT, DEFAULT, DEFAULT);
+VALUES(DEFAULT, "nestorortigoza@gmail.com" , "cuervo1908", "1234", "Foto", "1983-09-08", 25876456, DEFAULT, DEFAULT, DEFAULT);
 INSERT INTO usuarios 
-VALUES(DEFAULT, "agustinmartegani@gmail.com" , "marta212", "Foto", "1998-04-08", 3647483, DEFAULT, DEFAULT, DEFAULT);
+VALUES(DEFAULT, "agustinmartegani@gmail.com" , "marta212", "1234", "Foto", "1998-04-08", 3647483, DEFAULT, DEFAULT, DEFAULT);
 
 INSERT INTO productos 
 VALUES(DEFAULT, 1, "Venus de Milo", "La Afrodita de Milo (en griego, Αφροδίτη της Μήλου), más conocida como Venus de Milo, es una de las estatuas más representativas del periodo helenístico de la escultura griega, y una de las más famosas esculturas de la antigua Grecia. Fue creada en algún momento entre los años 130 a. C. y 100 a. C., y se cree que representa a Afrodita (denominada Venus en la mitología romana), diosa del amor y la belleza;2​ mide, aproximadamente, 211 cm de alto.", default, default, default);
