@@ -38,6 +38,8 @@ module.exports = function(sequelize, dataTypes){
         user.hasMany(models.Products, {
             as: 'productos',
             foreignKey: 'id_usuario'
-    }) }
+    }) 
+
+}
     return user
 }
