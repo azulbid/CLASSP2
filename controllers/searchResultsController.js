@@ -4,7 +4,12 @@ let searchResultsController = {
     showRes: function (req, res) {
         let buscado = req.query.search
         let elembusc = {
-            where: [{ nombreproducto: { [op.like]: `%${buscado}%` } }] || [{ descripcionproducto: {[op.like]: `%${buscado}%`}}],
+            where: {
+                [op.or]: [
+                  { nombreproducto: { [op.like]: `%${buscado}%` } },
+                  { descripcionproducto: { [op.like]: `%${buscado}%` } }
+                ]
+              },
             order: [['createdAt', 'ASC']],
             include: [{ association: 'comentarios' }, { association: 'usuario' }]
         }

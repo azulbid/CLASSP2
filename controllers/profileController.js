@@ -3,10 +3,21 @@ let db = require("../database/models");
 let op = db.Sequelize.Op; //no lo estamos usando
 let profileController = { 
     det: function(req,res){
-        return res.render('profile', {
-            datosUsuario: db.User, lista: db.Product, comentarios: db.Comment,
-            
-        }) 
+        let username = req.params.username;
+            db.User.findOne({
+                where: [{username:username}],
+                include: [{ association: 'productos' }]
+                
+            }).then(function(oneUser){
+                //res.send(oneUser.productos[1].nombreproducto)
+                return res.render('profile', {
+                    datosUsuario: oneUser,
+                    lista : oneUser.productos
+                    
+                }) 
+
+            })
+        
     },
     edit: function(req,res){
         return res.render('profile-edit', {

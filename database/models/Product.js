@@ -3,6 +3,7 @@ module.exports = function(sequelize, dataTypes){
     let cols = {
         id :{
             primaryKey: true,
+            autoIncrement: true,
             type: dataTypes.INTEGER
         },
         id_usuario: {
