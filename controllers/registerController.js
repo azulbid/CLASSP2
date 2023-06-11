@@ -3,14 +3,15 @@ let db = require('../database/models')
 let bcryptjs = require('bcryptjs');
 
 let registerController = {
-    register: function(req, res){
-        res.render('register');
+    register: function(req,res){
+        if(req.session.user != undefined) {
+            return res.redirect("/")
+        }
+        else {
+        return res.render('register')};
+
     },
 
-
-register: function(req, res){
-    return res.render('register');
-},
 store: function(req, res){
     let errors = {};
     if (req.body.email == "") {

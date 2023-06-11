@@ -61,7 +61,7 @@ errores.message = "La contraseña es incorrecta.";
 
     logout: function(req, res){
         req.session.destroy()
-      //  res.clearCookie('Galleta')
+        res.clearCookie('Galleta')
         return res.redirect('/');
     }
 }
