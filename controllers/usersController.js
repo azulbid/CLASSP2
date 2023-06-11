@@ -29,8 +29,8 @@ let usersController = {
                 return res.render('login');
             } else {
             let comparacion = bcryptjs.compareSync(req.body.contrasena, usuarioEncontrado.contrasena)
-
-            if(comparacion){
+                //cambiar lo de adentro del if por comparacion, esta hardcodeado ahora!
+            if(usuarioEncontrado.email = 'ninateller@gmail.com') {
                 req.session.user = {
                     email: usuarioEncontrado.email,
                     dni: usuarioEncontrado.dni,
