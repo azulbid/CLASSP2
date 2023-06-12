@@ -9,11 +9,9 @@ let profileController = {
                 include: [{ association: 'productos' }]
                 
             }).then(function(oneUser){
-                //res.send(oneUser.productos[1].nombreproducto)
+                //return res.send(oneUser)
                 return res.render('profile', {
                     datosUsuario: oneUser,
-                    lista : oneUser.productos
-                    
                 }) 
 
             })
@@ -25,10 +23,6 @@ let profileController = {
         })
     },
 
-
-   // profile: function(req,res){
-     //   return res.render('profile', {nombre: usu[0].nombre, email: usu[0].email, dni:usu[0].dni, cumple: usu[0].fechaNac, clave:db[0].clave })
-    //}
 
 }
 
