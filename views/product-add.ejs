@@ -31,12 +31,19 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/products/add" method="POST" class=""> <!-- aca antes decia login.html -->
-				<label class="imagennn">IMAGEN</label><input type="file" placeholder="FOTO DE PRODUCTO">
-				<label class="input" name="nombreproducto">NOMBRE DE PRODUCTO</label><input type="text" placeholder="NOMBRE PRODUCTO">
-				<label class="input" name="descripcionproducto">DESCRIPCION</label><input type="text" placeholder="DESCRIPCION PRODUCTO">
-				<button type="submit"> AGREGAR PRODUCTO </button>
-			</form>
+			<form action="/products/add" method="POST" class="">
+				<label class="imagennn">IMAGEN</label>
+				<input type="file" name="imagen" placeholder="FOTO DE PRODUCTO">
+				
+				
+				<input type="text" name="nombreproducto" placeholder="NOMBRE PRODUCTO">
+				
+				
+				<input type="text" name="descripcionproducto" placeholder="DESCRIPCION PRODUCTO">
+				
+				<button type="submit">AGREGAR PRODUCTO</button>
+			  </form>
+			  
 
 
 	<!-- footer -->
