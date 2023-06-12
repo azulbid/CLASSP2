@@ -31,11 +31,10 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/" method="GET" class=""> <!-- aca antes decia login.html -->
+			<form action="/add" method="POST" class=""> <!-- aca antes decia login.html -->
 				<label class="imagennn">IMAGEN</label><input type="file" placeholder="FOTO DE PRODUCTO">
-				<label class="input">NOMBRE DE PRODUCTO</label><input type="text" placeholder="NOMBRE PRODUCTO">
-				<label class="input">DESCRIPCION</label><input type="text" placeholder="DESCRIPCION PRODUCTO">
-				<label class="fecha">FECHA DE CARGA</label><input type="date" placeholder="FECHA DE CARGA">
+				<label class="input" name="nombreproducto">NOMBRE DE PRODUCTO</label><input type="text" placeholder="NOMBRE PRODUCTO">
+				<label class="input" name="descripcionproducto">DESCRIPCION</label><input type="text" placeholder="DESCRIPCION PRODUCTO">
 				<button type="submit"> AGREGAR PRODUCTO </button>
 			</form>
 
