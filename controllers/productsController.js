@@ -22,24 +22,32 @@ let productsController = {
      })
       },
 
-     add: function(req,res){
+      add: function(req,res){
+          return res.render('product-add')
+      },
+
+     submit: function(req,res){
           let form = req.params;
           let userid = req.User.userid
 
-          models.Products.create({
-               id_usuario: req.session.user.id,
-               nombreproducto: form.nombreproducto,
-               descripcionproducto: form.descripcionproducto,
-               detalle: form.detalle
-          })
-          .then(function(producto){
-               return res.redirect('/', 'Producto añadido');
-          })
-          .catch(function(error){
-               console.log(error);
-               return res.render('product-add',{ datosUsuario: products.usuario});
-          })
+           models.Products.create({
+                id_usuario: req.session.user.id,
+                nombreproducto: form.nombreproducto,
+                descripcionproducto: form.descripcionproducto,
+                detalle: form.detalle
+           })
+           .then(function(producto){
+                return res.redirect('/', 'Producto añadido');
+           })
+           .catch(function(error){
+                console.log(error);
+                return res.render('product-add',{ datosUsuario: products.usuario});
+           })
+     }
+
+     
+
           
-     }}
+      }
 
 module.exports = productsController
