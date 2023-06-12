@@ -28,26 +28,22 @@ let productsController = {
 
      submit: function(req,res){
           let form = req.params;
-          let userid = req.User.userid
-
-           models.Products.create({
-                id_usuario: req.session.user.id,
+          let product ={
+               id_usuario: req.session.id,
                 nombreproducto: form.nombreproducto,
                 descripcionproducto: form.descripcionproducto,
                 detalle: form.detalle
-           })
-           .then(function(producto){
-                return res.redirect('/', 'Producto añadido');
+          }
+          db.Products.create(product)
+           .then(function(productoCreado){
+                return res.redirect('/', 'Producto añadido', { datosUsuario: productoCreado.usuario});
            })
            .catch(function(error){
                 console.log(error);
-                return res.render('product-add',{ datosUsuario: products.usuario});
+                return res.render('product-add');
            })
-     }
+     }}
 
-     
 
-          
-      }
 
 module.exports = productsController
