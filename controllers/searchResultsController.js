@@ -39,7 +39,7 @@ let searchResultsController = {
           { descripcionproducto: { [op.like]: `%${usubuscado}%` } }
         ]
       },
-      order: [['createdAt', 'ASC']],
+      order: [['createdAt', 'DESC']],
       include: [{ association: 'comentarios' }, { association: 'usuario' }],
     }
 

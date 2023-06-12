@@ -56,14 +56,14 @@
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Mis productos</h2>
+				<p>Ordenados del más al menos reciente</p>
 			</div>
 			<!-- Show mis productos -->
 <section class="bloque">
 
 	<% if (datosUsuario.productos.length > 0) { %>
 
-<% for (let i=0; i<datosUsuario.productos.length; i++) { %>
-	<div class="col-12 col-sm-6 col-lg-3">
+		<% for (let i = datosUsuario.productos.length - 1; i >= 0; i--) { %>	<div class="col-12 col-sm-6 col-lg-3">
 			<section class="product-box">
 				<a href= "/products/detalle/id/<%=datosUsuario.productos[i].id%>">
 					<article class="product-box_data">

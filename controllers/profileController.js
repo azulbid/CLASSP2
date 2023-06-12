@@ -6,7 +6,7 @@ let profileController = {
         let username = req.params.username;
             db.User.findOne({
                 where: [{username:username}],
-                include: [{ association: 'productos' }]
+                include: [{ association: 'productos', order: [['createdAt', 'desc']] }]
                 
             }).then(function(oneUser){
                 //return res.send(oneUser)
