@@ -48,7 +48,9 @@
 				</article>
 
 				<section class="comments">
-					<% for (let i=0; i<5; i++) { %>
+
+					<% if(locals.user != undefined) { %>
+						<% for (let i=0; i<5; i++) { %>
 						<div class="col-12 col-lg-4">
 									<p class="user">
 										<strong> <a href="/profile"><%=datosproducto.comentarios[i].user%></a> </strong>
@@ -59,15 +61,24 @@
 									</article>
 								</a> </div>
 					<% } %> 
+
+					<form class="form" action="" method="GET">
+						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+					</form>
+				<% } else { %>
+				   <h1>Es necesario que este logueado para comentar </h1> %>
+				<% } %>
+
+
+
+					
 				</section>
 						
 						</article>
 
 					</section>
-					<form class="form" action="" method="GET">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+					
 					<hr>
 				</div>
 			</div>
