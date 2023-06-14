@@ -38,7 +38,7 @@ let usersController = {
 
                     } 
                     if(req.body.checkbox != undefined){
-                        res.cookie('Galleta', req.session.user, {maxAge: 1000 * 912912912912912912})
+                        res.cookie('Galleta', req.session.user, {maxAge: 1000 * 60 * 91200})
                     }
                 
             

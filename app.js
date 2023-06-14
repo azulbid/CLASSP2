@@ -50,11 +50,11 @@ return next ();
 app.use(function(req, res, next){
   if (req.cookies.Galleta != undefined && req.session.user == undefined){
     let datosRecordados = req.cookies.Galleta;
-
-    db.User.findByPk (datosRecordados)
+    db.User.findByPk (datosRecordados.id)
     .then((user)=>{
-      req.session.user = user.dataValues
-      req.locals.user = user.dataValues
+      //return res.send(user)
+      req.session.user = user
+      res.locals.user = user
       return next()
     }) .catch((err)=>{
       console.log(err)
