@@ -5,10 +5,13 @@ let productsController = {
      show: function(req,res){ 
           let id = req.params.id;
           db.Products.findOne({
-              where: [{id:id}],
-              include: [{ association: 'comentarios' }, {association : "usuario"}]
-              
-          }).then(function(product){
+               where: [{id:id}],
+               include: [
+                 { association: 'comentarios', include: [{ association: 'usuario' }] },
+                 { association: 'usuario' }
+               ]
+             })
+             .then(function(product){
           
           
           //show: metodo      render se ejecuta en el response
@@ -50,7 +53,32 @@ let productsController = {
                 console.log(error);
                 return res.render('product-add',{mensaje: 'Error' });
            })
-     }}
+     },
+comment: function(req,res){
+     let errores = {}
+     if(req.session.user != undefined){
+          let comentario = { 
+               id_post: req.params.id,
+               id_usuario: String(req.session.user.id),
+               texto_comentario: req.body.comentario}
+              
+               db.Comments.create(comentario)
+               return res.redirect("/product/detalle/id/" + req.params.id)
+     }
+     else {
+          errores.message = "El email no fue escrito correctamente o no está registrado en Loniaz"
+                res.locals.errors = errores;
+          return res.redirect("/users/login")
+     }
+     
+     
+         
+
+
+     }
+}
+
+
 
 
 

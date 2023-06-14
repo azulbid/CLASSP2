@@ -48,12 +48,10 @@
 				</article>
 
 				<section class="comments">
-
-					<% if(locals.user != undefined) { %>
-						<% for (let i=0; i<5; i++) { %>
+					<% for (let i = datosproducto.comentarios.length - 1; i >= 0; i--) { %>
 						<div class="col-12 col-lg-4">
 									<p class="user">
-										<strong> <a href="/profile"><%=datosproducto.comentarios[i].user%></a> </strong>
+										<strong> <a href="/profile/<%=datosproducto.comentarios[i].usuario.username%>"><%=datosproducto.comentarios[i].usuario.username%></a> </strong>
 										<%=datosproducto.comentarios[i].texto_comentario%>
 									</p>
 									<article class="product-box_data">
@@ -78,7 +76,10 @@
 						</article>
 
 					</section>
-					
+					<form class="form" action="" method="POST">
+						<input name="comentario" class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<button type="submit" class="buy-now-button">Agregar comentario (solo usuarios logueados)</button>
+					</form>
 					<hr>
 				</div>
 			</div>
