@@ -1,92 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="../public/images/loniaz.png" /> 
-	
-	<title> Loniaz Art & Design  </title>
-			<!-- Font Awesome Stylesheet -->
+	<link width="" rel="shortcut icon" href="../public/images/loniaz.png" />
+
+	<title> Loniaz Art & Design </title>
+	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
 	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/css/app.css">
 </head>
+
 <body>
 	<!-- Header -->
-	<% if(locals.user != undefined) { %>
+	<% if(locals.user !=undefined) { %>
 		<%- include('./partials/headerLogueado.ejs') %>
-<% } else { %>
-   <%- include('./partials/header.ejs') %>
-<% } %>
-	<!-- /Header -->
+			<% } else { %>
+				<%- include('./partials/header.ejs') %>
+					<% } %>
+						<!-- /Header -->
 
-	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%=datosproducto.nombreproducto%></h2> 
-			
-				<a href ="/profile/<%=datosproducto.usuario.username%>" >
-					<p class="product-detail-description"></p> 
-						<%=datosproducto.usuario.username%>
-					</p>
-				</a>
+						<!-- product detail -->
+						<div class="container products-wrapper">
+							<div class="d-flex align-items-center">
+								<h2 class="products-title">
+									<%=datosproducto.nombreproducto%>
+								</h2>
 
-			
-		</div>
+								<a href="/profile/<%=datosproducto.usuario.username%>">
+									<p class="product-detail-description"></p>
+									<%=datosproducto.usuario.username%>
+										</p>
+								</a>
 
 
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="" alt="PONER IMAGENES EN MODELO Y COMPLETAR ESTO" class="product-detail-img">
-					<p class="product-detail-description">
-						<%=datosproducto.descripcionproducto%>
-					</p>
-				</article>
+							</div>
 
-				<section class="comments">
-					<% for (let i = datosproducto.comentarios.length - 1; i >= 0; i--) { %>
-						<div class="col-12 col-lg-4">
-									<p class="user">
-										<strong> <a href="/profile/<%=datosproducto.comentarios[i].usuario.username%>"><%=datosproducto.comentarios[i].usuario.username%></a> </strong>
-										<%=datosproducto.comentarios[i].texto_comentario%>
-									</p>
-									<article class="product-box_data">
-										
+
+							<div class="product-detail">
+								<div class="row">
+									<article class="col-12 col-lg-8 product-detail-info">
+										<img src="" alt="PONER IMAGENES EN MODELO Y COMPLETAR ESTO"
+											class="product-detail-img">
+										<p class="product-detail-description">
+											<%=datosproducto.descripcionproducto%>
+										</p>
 									</article>
-								</a> </div>
-					<% } %> 
 
-					<form class="form" action="" method="GET">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-				<% } else { %>
-				   <h1>Es necesario que este logueado para comentar </h1> %>
-				<% } %>
+									<% if(locals.user !=undefined) { %>
+										<section class="comments">
+											<% for (let i=datosproducto.comentarios.length - 1; i>= 0; i--) { %>
+												<div class="col-12 col-lg-4">
+													<p class="user">
+														<strong> <a
+																href="/profile/<%=datosproducto.comentarios[i].usuario.username%>">
+																<%=datosproducto.comentarios[i].usuario.username%>
+															</a> </strong>
+														<%=datosproducto.comentarios[i].texto_comentario%>
+													</p>
+													<article class="product-box_data">
+
+													</article>
+													</a>
+													<form class="form" action="" method="GET">
+														<input class="form-input" type="text" value=""
+															placeholder="Agregar comentario">
+														<button type="submit" class="buy-now-button">AGREGAR
+															COMENTARIO</button>
+													</form>
+												</div>
+
+												<% } %>
+
+
+													<% } else { %>
+														<h1>Es necesario que este logueado para comentar </h1>
+														<% } %>
 
 
 
-					
-				</section>
-						
-						</article>
 
-					</section>
-					<form class="form" action="" method="POST">
-						<input name="comentario" class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">Agregar comentario (solo usuarios logueados)</button>
-					</form>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /product detail -->
+										</section>
 
-	<!-- footer -->
-	<%- include('./partials/footer') %>
-	<!-- /footer -->
+										</article>
+
+										<!-- </section>
+										<form class="form" action="" method="POST">
+											<input name="comentario" class="form-input" type="text" value=""
+												placeholder="Agregar comentario">
+											<button type="submit" class="buy-now-button">Agregar comentario (solo
+												usuarios logueados)</button>
+										</form> -->
+
+								</div>
+							</div>
+						</div>
+						</div>
+						<!-- /product detail -->
+
+						<!-- footer -->
+						<%- include('./partials/footer') %>
+							<!-- /footer -->
