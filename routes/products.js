@@ -9,5 +9,6 @@ router.get('/detalle/id/:id', productsController.show); //-->rutas PARAMETRIZADA
 //lo que se escribe en la ruta real, la logica del response actuar diferente, permite tener una ruta para el detalle de cualquiera de nuestros productos) ≠ rutas estaticas
 router.get('/add', productsController.add);
 router.post("/add", productsController.submit)
+router.post('/detalle/id/:id', productsController.comment)
 
 module.exports = router; 
