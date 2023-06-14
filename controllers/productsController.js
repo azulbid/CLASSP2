@@ -42,6 +42,7 @@ let productsController = {
                id_usuario: String(req.session.user.id),
                nombreproducto: req.body.nombreproducto,
                descripcionproducto: req.body.descripcionproducto,
+               imagenproducto: req.body.imagenes
            //    detalle: form.detalle
           }
            //return res.send(product)
