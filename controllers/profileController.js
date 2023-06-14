@@ -24,8 +24,9 @@ let profileController = {
             let id = req.session.user.id
             db.User.findByPk(id)
             .then(function(resultado){
-                return res.render('profile-edit', {
-                    datosUsuario: db.User, lista: db.Product, comentarios: db.Comment,})
+                return res.send(res.locals.User)
+                //return res.render('profile-edit', {
+                  //  datosUsuario: res.locals.User, lista: db.Product, comentarios: db.Comment,})
             })
         }
     },
