@@ -63,7 +63,7 @@ comment: function(req,res){
                texto_comentario: req.body.comentario}
               
                db.Comments.create(comentario)
-               return res.redirect("/product/detalle/id/" + req.params.id)
+               return res.redirect("/products/detalle/id/" + req.params.id)
      }
      else {
           errores.message = "El email no fue escrito correctamente o no está registrado en Loniaz"
