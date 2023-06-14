@@ -26,22 +26,24 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Venus de Milo</h2> 
-			<p class="product-detail-description">
+			<h2 class="products-title"><%=datosproducto.nombreproducto%></h2> 
+			
 				<a href ="/profile/<%=datosproducto.usuario.username%>" >
+					<p class="product-detail-description"></p> 
+						<%=datosproducto.usuario.username%>
+					</p>
+				</a>
 
-			</p>
+			
 		</div>
 
 
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/venusdemilo.webp" alt="" class="product-detail-img">
+					<img src="" alt="PONER IMAGENES EN MODELO Y COMPLETAR ESTO" class="product-detail-img">
 					<p class="product-detail-description">
-						La Afrodita de Milo (en griego, Αφροδίτη της Μήλου), más conocida como Venus de Milo,
-						es una de las estatuas más representativas del periodo helenístico de la escultura griega, y una de las más famosas esculturas de la antigua Grecia. 
-						Fue creada en algún momento entre los años 130 a. C. y 100 a. C., y se cree que representa a Afrodita (denominada Venus en la mitología romana), diosa del amor y la belleza;2 mide, aproximadamente, 211 cm de alto.
+						<%=datosproducto.descripcionproducto%>
 					</p>
 				</article>
 
@@ -50,7 +52,8 @@
 						<div class="col-12 col-lg-4">
 									<p class="user">
 										<strong> <a href="/profile"><%=datosproducto.comentarios[i].user%></a> </strong>
-										<%=comentarios[i].comment%></p>
+										<%=datosproducto.comentarios[i].texto_comentario%>
+									</p>
 									<article class="product-box_data">
 										
 									</article>
