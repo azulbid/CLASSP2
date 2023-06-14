@@ -55,8 +55,8 @@ let productsController = {
            })
      },
 comment: function(req,res){
-     let errores = {}
-     if(req.session.user != undefined){
+     
+    
           let comentario = { 
                id_post: req.params.id,
                id_usuario: String(req.session.user.id),
@@ -64,12 +64,8 @@ comment: function(req,res){
               
                db.Comments.create(comentario)
                return res.redirect("/products/detalle/id/" + req.params.id)
-     }
-     else {
-          errores.message = "El email no fue escrito correctamente o no está registrado en Loniaz"
-                res.locals.errors = errores;
-          return res.redirect("/users/login")
-     }
+     
+     
      
      
          
