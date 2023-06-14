@@ -35,12 +35,10 @@ let searchResultsController = {
     let usubusc = {
       where: {
         [op.or]: [
-          { nombreproducto: { [op.like]: `%${usubuscado}%` } },
-          { descripcionproducto: { [op.like]: `%${usubuscado}%` } }
+          { username: { [op.like]: `%${usubuscado}%` } },
         ]
       },
       order: [['createdAt', 'DESC']],
-      include: [{ association: 'comentarios' }, { association: 'usuario' }],
     }
 
 
@@ -49,12 +47,12 @@ db.User.findAll(usubusc)
     //   return res.send(result)
 
     if (result.length > 0) {
-      return res.render('search-results', { lista: result })
+      return res.render('user-results', { lista: result })
     } else {
       let errors = {};
       errors.message = "El usuario buscado no se encuentra registrado"
       res.locals.errors = errors;
-      return res.render('search-results', { lista: undefined })
+      return res.render('user-results', { lista: undefined })
     }
   })
 
