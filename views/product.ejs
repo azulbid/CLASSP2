@@ -54,7 +54,12 @@
 
 									<% if(locals.user !=undefined) { %>
 										<section class="comments">
-											<% for (let i=datosproducto.comentarios.length - 1; i>= 0; i--) { %>
+											<form class="form" action="" method="GET">
+														<input class="form-input" type="text" value=""
+															placeholder="Agregar comentario">
+														<button type="submit" class="buy-now-button">AGREGAR
+															COMENTARIO</button>
+													</form><% for (let i=datosproducto.comentarios.length - 1; i>= 0; i--) { %>
 												<div class="col-12 col-lg-4">
 													<p class="user">
 														<strong> <a
@@ -67,12 +72,7 @@
 
 													</article>
 													</a>
-													<form class="form" action="" method="GET">
-														<input class="form-input" type="text" value=""
-															placeholder="Agregar comentario">
-														<button type="submit" class="buy-now-button">AGREGAR
-															COMENTARIO</button>
-													</form>
+													
 												</div>
 
 												<% } %>
