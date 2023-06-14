@@ -12,7 +12,7 @@ let registerController = {
 
     },
 
-store: function(req, res){
+    store: function(req, res){
     let errors = {};
     if (req.body.email == "") {
         errors.message = "ESTE CAMPO SE ENCUENTRA VACÍO, POR FAVOR INGRESE UN MAIL VÁLIDO";
