@@ -5,8 +5,6 @@ var router = express.Router();
 
 router.get('/:username', profileController.det);
 
-router.get('/editar', profileEditController.edit);
-router.post('/editar', profileController.modify);
 
 
 

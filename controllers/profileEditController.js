@@ -5,7 +5,6 @@ let profileEditController = {
   
     
     edit: function(req,res){
-       // return res.render('profile-edit')
         if (req.session.user == undefined){
             return res.redirect('/login')
         }else {
@@ -18,7 +17,20 @@ let profileEditController = {
             })
         }
     },
-
+    modify: function(req, res){
+        let form = req.body
+        db.User.update({
+            nombre: form.nombreproducto,
+            email: form.email,
+            dni: form.dni
+            //agregar foto perfil
+        }, {where: {
+            id: form.id
+        }})
+        let errors = {}
+        errors.message = "Volvé a ingresar sesión"
+        return res.redirect('/login/logout')
+        }
  }
 
 
