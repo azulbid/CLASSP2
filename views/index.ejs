@@ -41,33 +41,16 @@
 				</div>
 
 				<section class="bloque">
-					<% for (let i=0; i<5; i++) { %>
-						<div class="col-12 col-sm-6 col-lg-3">
-							<section class="product-box">
-								<a href="/products/detalle/id/<%=lista[i].id%>">
-									<figure class="product-box_image">
-										<img src="<%=lista[i].imagen%>" alt="<%=lista[i].nombre%>">
-									</figure>
-									<article class="product-box_data">
-										<h2>
-											<%= lista[i].nombre%>
-										</h2>
-										<p>
-											<%= lista[i].Técnica%>
-										</p>
-										<p>
-											<%= lista[i].Dimensiones%>
-										</p>
-										<p>
-											<%= lista[i].Creación%>
-										</p>
-									</article>
-								</a>
-							</section>
-						</div>
-						<% } %>
-			</div>
-		</div>
+					<% for (let i = datosUsuario.productos.length - 1; i >= 0; i--) { %>	<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href= "/products/detalle/id/<%=datosUsuario.productos[i].id%>">
+								<article class="product-box_data">
+									<h2> <%= datosUsuario.productos[i].nombreproducto%> </h2>
+								</article>
+							</a>
+						</section>
+					</div>
+					<% } %>
 		</section>
 
 		<!-- /Novedades -->
