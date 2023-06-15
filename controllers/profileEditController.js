@@ -1,12 +1,14 @@
 //PERFIL
 let db = require("../database/models");
 let op = db.Sequelize.Op; //no lo estamos usando
+let bcryptjs = require('bcryptjs');
+
 let profileEditController = { 
   
     
     edit: function(req,res){
         if (req.session.user == undefined){
-            return res.redirect('/login')
+            return res.redirect('/users/login')
         }else {
             let id = req.session.user.id
             db.User.findByPk(id)
@@ -20,16 +22,20 @@ let profileEditController = {
     modify: function(req, res){
         let form = req.body
         db.User.update({
-            nombre: form.nombreproducto,
+            username: form.username,
             email: form.email,
-            dni: form.dni
+            dni: form.dni ,
+            contrasena: bcryptjs.hashSync(form.contrasena, 10),
+
             //agregar foto perfil
         }, {where: {
-            id: form.id
+            id: req.session.user.id
         }})
         let errors = {}
         errors.message = "Volvé a ingresar sesión"
-        return res.redirect('/login/logout')
+        req.session.destroy()
+        res.clearCookie('Galleta')
+        return res.redirect('/users/login')
         }
  }
 
