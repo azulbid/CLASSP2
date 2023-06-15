@@ -3,7 +3,6 @@ module.exports = function(sequelize, dataTypes){
     let cols = {
         id :{
             primaryKey: true,
-            autoIncrement: true,
             type: dataTypes.INTEGER
         },
         email: {
@@ -39,8 +38,6 @@ module.exports = function(sequelize, dataTypes){
         user.hasMany(models.Products, {
             as: 'productos',
             foreignKey: 'id_usuario'
-    }) 
-
-}
+    }) }
     return user
 }
