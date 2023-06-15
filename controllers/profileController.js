@@ -44,6 +44,11 @@ let profileController = {
         errors.message = "Volvé a ingresar sesión"
         return res.redirect('/login/logout')
         }
+
+        .catch( function(error){
+            console.log(error);
+        })
+
     }
 
 
