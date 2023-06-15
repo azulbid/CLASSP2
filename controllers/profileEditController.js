@@ -21,18 +21,30 @@ let profileEditController = {
     },
     modify: function(req, res){
         let form = req.body
-        db.User.update({
-            username: form.username,
-            email: form.email,
-            dni: form.dni ,
-            contrasena: bcryptjs.hashSync(form.contrasena, 10),
+        let updates = {};
+
+    if (form.username) {
+  updates.username = form.username;
+    }
+    if (form.email) {
+  updates.email = form.email;
+    }
+    if (form.dni) {
+  updates.dni = form.dni;
+    }
+    if (form.contrasena) {
+  updates.contrasena = bcryptjs.hashSync(form.contrasena, 10);
+    }
+
+        db.User.update(updates,
+         
 
             //agregar foto perfil
-        }, {where: {
+    {where: {
             id: req.session.user.id
-        }})
-        let errors = {}
-        errors.message = "Volvé a ingresar sesión"
+        },fields: Object.keys(updates)
+    })
+        
         req.session.destroy()
         res.clearCookie('Galleta')
         return res.redirect('/users/login')
