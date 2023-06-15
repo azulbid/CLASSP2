@@ -15,7 +15,8 @@ let productsController = {
           
           
           //show: metodo      render se ejecuta en el response
-         return res.render('product' ,{ 
+         
+          return res.render('product' ,{ 
           
           //product es en donde quiero renderizar (en que vista)      render es un metodo
           //dos argumentos que se le pasa a la vista
@@ -42,7 +43,7 @@ let productsController = {
                id_usuario: String(req.session.user.id),
                nombreproducto: req.body.nombreproducto,
                descripcionproducto: req.body.descripcionproducto,
-               imagenproducto: req.body.imagenes
+               imagenes: req.body.imagenes
            //    detalle: form.detalle
           }
            //return res.send(product)

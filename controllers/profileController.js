@@ -3,10 +3,10 @@ let db = require("../database/models");
 let op = db.Sequelize.Op; //no lo estamos usando
 let profileController = { 
     det: function(req,res){
-        let username = req.session.user.username;
+        let username = req.params.username;
             db.User.findOne({
                 where: [{username:username}],
-                include: [{ association: 'productos', order: [['createdAt', 'desc']] }]
+                include: [{ association: 'productos' }]
                 
             }).then(function(oneUser){
                 //return res.send(oneUser)
@@ -25,11 +25,12 @@ let profileController = {
             db.User.findByPk(id)
             .then(function(resultado){
                 //return res.send(res.locals.User)
-                return res.render('profile-edit', {
+        return res.render('profile-edit', {
                     datosUsuario: res.locals.User, lista: db.Product, comentarios: db.Comment,})
             })
         }
     },
+
     modify: function(req, res){
         let form = req.body
         db.User.update({
@@ -45,11 +46,11 @@ let profileController = {
         return res.redirect('/login/logout')
         }
 
-        .catch( function(error){
-            console.log(error);
-        })
+        // .catch(function(e){
+        //     console.log(e);
+        // },
 
-    }
+}
 
 
 module.exports = profileController

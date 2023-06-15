@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get('/:username', profileController.det);
 router.get('/editar', profileController.edit);
-router.post('/editar', profileController.modify)
+router.post('/editar', profileController.modify);
 
 
 module.exports = router; 
