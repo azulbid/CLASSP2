@@ -41,31 +41,34 @@
 				</div>
 
 				<section class="bloque">
-					<% for (let i = 5 ; i >= 0; i--) { %>	
+					<% for (let i = 5; i >= 0; i--) { %>
 						<div class="col-12 col-sm-6 col-lg-3">
-							<section class="product-box">
-								<a href="/products/detalle/id/<%=lista[i].id%>">
-									<figure class="product-box_image">
-										<img src="<%=lista[i].imagen%>" alt="<%=lista[i].nombre%>">
-									</figure>
-									<article class="product-box_data">
-										<h2>
-											<%= lista[i].nombre%>
-										</h2>
-										<p>
-											<%= lista[i].Técnica%>
-										</p>
-										<p>
-											<%= lista[i].Dimensiones%>
-										</p>
-										<p>
-											<%= lista[i].Creación%>
-										</p>
-									</article>
-								</a>
-							</section>
-						</div>
-						<% } %>
+						<section class = 'product-box'>
+								<figure class="product-box_image">
+									<img src="<%= lista[i].imagen %>" alt="<%= lista[i].nombreproducto %>">
+								</figure>
+								<article class="product-box_data">
+									<h2>
+										<a href="/products/detalle/id/<%=lista[i].id%>">
+
+										<%= lista[i].nombreproducto %>
+										</a>
+									</h2>
+				
+									<p>
+										<%= lista[i].descripcionproducto %>
+									</p>
+									<h5>
+										<a href ="/profile/<%=lista[i].usuario.username%>" >
+										<%= lista[i].usuario.username %>
+									</a>
+									</h5>	
+								</article>
+							</a>
+						</section>
+					</div>
+					
+					<%} %>
 			</div>
 		</div>
 		</section>
@@ -79,33 +82,35 @@
 				</div>
 
 				
-				<!-- Show the "ultimos" products -->
 				<section class="bloque">
-					<% for (let i=5; i<10; i++) { %>
+					<% for (let i = 5; i >= 0; i--) { %>
 						<div class="col-12 col-sm-6 col-lg-3">
-							<section class="product-box">
-								<a href="/products/detalle/id/<%=lista[i].id%>">
-									<figure class="product-box_image">
-										<img src="<%=lista[i].imagen%>" alt="<%=lista[i].nombre%>">
-									</figure>
-									<article class="product-box_data">
-										<h2>
-											<%= lista[i].nombre%>
-										</h2>
-										<p>
-											<%= lista[i].Técnica%>
-										</p>
-										<p>
-											<%= lista[i].Dimensiones%>
-										</p>
-										<p>
-											<%= lista[i].Creación%>
-										</p>
-									</article>
-								</a>
-							</section>
-						</div>
-						<% } %>
+						<section class = 'product-box'>
+								<figure class="product-box_image">
+									<img src="<%= lista2[i].imagen %>" alt="<%= lista2[i].nombreproducto %>">
+								</figure>
+								<article class="product-box_data">
+									<h2>
+										<a href="/products/detalle/id/<%=lista2[i].id%>">
+
+										<%= lista2[i].nombreproducto %>
+										</a>
+									</h2>
+				
+									<p>
+										<%= lista2[i].descripcionproducto %>
+									</p>
+									<h5>
+										<a href ="/profile/<%=lista[i].usuario.username%>" >
+										<%= lista2[i].usuario.username %>
+									</a>
+									</h5>	
+								</article>
+							</a>
+						</section>
+					</div>
+					
+					<%} %>
 			</div>
 		</div>
 		</section>

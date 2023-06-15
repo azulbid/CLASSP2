@@ -17,6 +17,7 @@ let searchResultsController = {
     db.Products.findAll(elembusc)
       .then(function (result) {
         if (result.length > 0) {
+          //return res.send(result)
           return res.render('search-results', { lista: result })
         } else {
           let errors = {};
