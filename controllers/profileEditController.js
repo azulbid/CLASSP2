@@ -35,6 +35,8 @@ let profileEditController = {
     if (form.contrasena) {
   updates.contrasena = bcryptjs.hashSync(form.contrasena, 10);
     }
+    if (form.fotodeperfil) {
+        updates.fotodeperfil = form.fotodeperfil };
 
         db.User.update(updates,
          
