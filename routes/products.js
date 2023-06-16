@@ -10,5 +10,7 @@ router.get('/detalle/id/:id', productsController.show); //-->rutas PARAMETRIZADA
 router.get('/add', productsController.add);
 router.post("/add", productsController.submit)
 router.post('/detalle/id/:id', productsController.comment)
+router.get('/modify/:id', productsController.modify)
+router.post('/modify/:id', productsController.modificado)
 
 module.exports = router; 

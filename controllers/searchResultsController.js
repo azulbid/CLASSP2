@@ -7,7 +7,8 @@ let searchResultsController = {
       where: {
         [op.or]: [
           { nombreproducto: { [op.like]: `%${buscado}%` } },
-          { descripcionproducto: { [op.like]: `%${buscado}%` } }
+          { descripcionproducto: { [op.like]: `%${buscado}%` } },
+          { imagen: { [op.like]: `%${buscado}%` } }
         ]
       },
       order: [['createdAt', 'ASC']],

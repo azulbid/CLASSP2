@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link width="" rel="shortcut icon" href="../images/logo-mercado-liebre.jpg" />
+
+	<title> Loniaz Art & Design </title>
+	<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body>
+	<!-- Header -->
+	<% if(locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado.ejs') %>
+<% } else { %>
+   <%- include('./partials/header.ejs') %>
+<% } %>
+	<!-- /Header -->
+
+<!-- Novedades -->
+<div class="container products-wrapper">
+	<div class="row">
+		<div class="col-12">
+			<h2 class="products-title">Editar producto</h2>
+		</div>
+		<!-- Show the "ultimos" products -->
+
+		<form action="/products/modify/<%= random  %>" method="POST" class="">
+            <label class="imagennn">IMAGEN</label>
+            <input type="text" name="imagenes" placeholder="LINK DE FOTO DE PRODUCTO">
+            
+            
+            <input type="text" name="nombreproducto" placeholder="NOMBRE PRODUCTO">
+            
+            
+            <input type="text" name="descripcionproducto" placeholder="DESCRIPCION PRODUCTO">
+            
+            <button type="submit">MODIFICAR PRODUCTO</button>
+          </form>
+
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- /footer -->
+</body>
+
+</html>
