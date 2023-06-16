@@ -10,6 +10,7 @@
 	<title> Loniaz Art & Design </title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<link rel="stylesheet" href="https://fontawesome.com/icons/trash-can?f=classic&s=solid&pc=%23ffffff">
 	<!-- Bootstrap Grid Stylesheet -->
 	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
@@ -30,12 +31,21 @@
 							<div class="d-flex align-items-center">
 								<h2 class="products-title">
 									<%=datosproducto.nombreproducto%>
+
+									<% if(locals.user.id == datosproducto.usuario.id) { %>
+
+										<a href="/products/delete">
+											<img src="/images/trashcan.png" class="trash-icon"></img>
+										</a>
+										<% } %>
+										
+						
 								</h2>
 
 								<a href="/profile/<%=datosproducto.usuario.username%>">
-									<p class="product-detail-description"></p>
+									<h3 class="product-detail-description"></p>
 									<%=datosproducto.usuario.username%>
-										</p>
+									</h3>
 								</a>
 
 

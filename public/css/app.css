@@ -673,6 +673,10 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
+.trash-icon {
+  height: 1em; /* Ajusta este valor según sea necesario */
+  width: auto; /* Ajusta este valor según sea necesario */
+}
 
 
 /*====== Media-Queries ======*/
@@ -734,3 +738,4 @@ r_credit-link {
 .h2{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
