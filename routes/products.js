@@ -12,5 +12,6 @@ router.post("/add", productsController.submit)
 router.post('/detalle/id/:id', productsController.comment)
 router.get('/modify/:id', productsController.modify)
 router.post('/modify/:id', productsController.modificado)
+router.post('/delete/:id', productsController.delete)
 
 module.exports = router; 

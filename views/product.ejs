@@ -34,9 +34,7 @@
 
 									<% if(locals.user.id == datosproducto.usuario.id) { %>
 
-										<a href="/products/delete">
-											<img src="/images/trashcan.png" class="trash-icon"></img>
-										</a>
+									
 										<a href="/products/modify/<%= datosproducto.id %>">
 											<i class="fas fa-cog"></i>
 										</a>
@@ -64,7 +62,17 @@
 										<p class="product-detail-description">
 											<%=datosproducto.descripcionproducto%>
 										</p>
+										<% if(locals.user.id == datosproducto.usuario.id) { %>
+
+										<form action="/products/delete/<%=datosproducto.id%>" method="post" >
+											<button type="submit" >
+											  <i class="fas fa-trash"></i> Eliminar Producto
+											</button>
+										  </form>
+										  	<% } %>
 									</article>
+									
+									
 
 									<% if(locals.user !=undefined) { %>
 										<section class="comments">

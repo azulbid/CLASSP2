@@ -64,10 +64,7 @@ let productsController = {
                id_usuario: String(req.session.user.id),
                texto_comentario: req.body.comentario
           }
-               .catch(function (error) {
-                    console.log(error);
-                    return res.render('product-add', { mensaje: 'Error' });
-               })
+               
 
           db.Comments.create(comentario)
           return res.redirect("/products/detalle/id/" + req.params.id)
@@ -101,14 +98,33 @@ let productsController = {
       };
           db.Products.update(updates,
            
-  
-              //agregar foto perfil
-      {where: {
+        {where: {
               id: req.params.edit
           },fields: Object.keys(updates)
       })
           return res.redirect('/')
-          }
+          },
+     
+     delete: function (req, res){
+               let id = req.params.id;
+             
+               db.Comments.destroy({
+                    where: { id_post: id }
+                  })
+                  .then(() => {
+                    return db.Products.destroy({
+                      where: { id: id }
+                    });
+                  })
+                  .then(() => {
+                    return res.redirect('/');
+                  })
+               .catch(function (error) {
+                    console.log(error);
+                    return res.redirect('/', { mensaje: 'Error' });
+               })
+             },
+             
    }
 
 
