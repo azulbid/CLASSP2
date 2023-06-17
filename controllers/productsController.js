@@ -53,7 +53,7 @@ let productsController = {
                })
                .catch(function (error) {
                     console.log(error);
-                    return res.render('product-add', { mensaje: 'Error' });
+                    return res.render('product-add');
                })
      },
      comment: function (req, res) {
@@ -73,12 +73,12 @@ let productsController = {
 
      },
      modify: function (req, res) {
-      
+     
               
-                    return res.render('product-edit', { mensaje: 'Error' })
+                    return res.render('product-edit', { random: req.params.id })
                          .catch(function (error) {
                               console.log(error);
-                              return res.render('product-edit', { mensaje: 'Error' });
+                              return res.render('product-edit');
                          })
 },
 
@@ -99,10 +99,13 @@ let productsController = {
           db.Products.update(updates,
            
         {where: {
-              id: req.params.edit
+              id: req.params.id
           },fields: Object.keys(updates)
       })
-          return res.redirect('/')
+      .then(() => {
+          return res.redirect('/');
+        })
+     
           },
      
      delete: function (req, res){
@@ -121,7 +124,7 @@ let productsController = {
                   })
                .catch(function (error) {
                     console.log(error);
-                    return res.redirect('/', { mensaje: 'Error' });
+                    return res.redirect('/');
                })
              },
              
