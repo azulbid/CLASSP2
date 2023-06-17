@@ -3,6 +3,11 @@
 let db = require('../database/models');
 let productsController = {
      show: function (req, res) {
+
+          let idUsuario = ''
+          if (req.session.user != undefined){
+               idUsuario = req.session.user.id
+          }
           let id = req.params.id;
           db.Products.findOne({
                where: [{ id: id }],
@@ -18,8 +23,7 @@ let productsController = {
 
                     return res.render('product', {
 
-                         //product es en donde quiero renderizar (en que vista)      render es un metodo
-                         //dos argumentos que se le pasa a la vista
+                         idUsuario : idUsuario,
                          datosproducto: product
                     })
                })

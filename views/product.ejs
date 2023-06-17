@@ -32,7 +32,7 @@
 								<h2 class="products-title">
 									<%=datosproducto.nombreproducto%>
 
-									<% if(locals.user.id == datosproducto.usuario.id) { %>
+									<% if(idUsuario == datosproducto.usuario.id) { %>
 
 									
 										<a href="/products/modify/<%= datosproducto.id %>">
@@ -62,7 +62,7 @@
 										<p class="product-detail-description">
 											<%=datosproducto.descripcionproducto%>
 										</p>
-										<% if(locals.user.id == datosproducto.usuario.id) { %>
+										<% if(idUsuario == datosproducto.usuario.id) { %>
 
 										<form action="/products/delete/<%=datosproducto.id%>" method="post" >
 											<button type="submit" >
@@ -75,6 +75,7 @@
 									
 
 									<% if(locals.user !=undefined) { %>
+										<div>
 										<section class="comments">
 											<form class="form" action="" method="POST">
 														<input class="form-input" type="text" value="" name="comentario"
@@ -109,7 +110,7 @@
 
 										</section>
 
-										</article>
+										</div>
 
 										<!-- </section>
 										<form class="form" action="" method="POST">
