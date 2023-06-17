@@ -45,7 +45,7 @@ let registerController = {
             username: form.username,
             dni: form.dni,
             fecha: form.fecha,
-            fotodeperfil: form.fotodeperfil,
+            fotodeperfil: form.fotodeperfil ? form.fotodeperfil: 'https://clasicoshispanicos.com/wp-content/uploads/2021/01/siluetagrisanonimo.jpg',
             contrasena: bcryptjs.hashSync(form.contrasena, 10),
             remember_token: null
         }
