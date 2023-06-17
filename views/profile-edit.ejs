@@ -34,11 +34,11 @@
 		<!-- Show the "ultimos" products -->
 
 		<form action="/profileEdit/" method="POST" class="registroform"> <!-- aca antes decia login.html -->
-			<label class = "registroformlabel">EMAIL</label><input name="email" type="email" placeholder="EMAIL" class = "registroinput">			
-			<label class = "registroformlabel">NOMBRE DE USUARIO</label><input name="username" type="text" placeholder="USUARIO" class = "registroinput">
+			<label class = "registroformlabel">EMAIL</label><input name="email" type="email" placeholder="<%=locals.user.email %>" class = "registroinput">			
+			<label class = "registroformlabel">NOMBRE DE USUARIO</label><input name="username" type="text" placeholder="<%=locals.user.username %>" class = "registroinput">
 			<label class = "registroformlabel">CONTRASEÑA</label><input name="contrasena" type="password" placeholder="CONTRASEÑA" class = "registroinput">
-			<label class = "registroformlabel">FECHA DE NACIMIENTO</label><input name="fecha" type="date" placeholder="FECHA NACIMIENTO" class = "registroinput">
-			<label class = "registroformlabel">NUMERO DE DOCUMENTO</label><input name="dni" type="number" placeholder="NRO DOCUMENTO" class = "registroinput"> 
+			<label class = "registroformlabel">FECHA DE NACIMIENTO</label><input name="fecha" type="date" placeholder="<%=locals.user.fecha %>" class = "registroinput">
+			<label class = "registroformlabel">NUMERO DE DOCUMENTO</label><input name="dni" type="number" placeholder="<%=locals.user.dni %>" class = "registroinput"> 
 			<label class="fotodeperfil">LINK DE FOTO DE PERFIL</label><input type="text" name="fotodeperfil" placeholder="FOTO DE PERFIL"> 
 			<button type="submit" class = "registrobutton"> CONFIRMAR CAMBIOS </button>
 		</form>
