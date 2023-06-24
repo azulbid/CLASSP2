@@ -1,0 +1,139 @@
+PROMESAS: funciones para ejecutar codigo de forma mas eficiente
+javascript es asincronico; no necesita que termine una cosa para arrancar otra
+promesas: tipo de funcion para asincronicas
+para eso usamos el .then: solo se ejecuta cuando el pedido sincronico haya terminado; cadena de thens 
+concatenar promesas
+dentro del then ponemos la consecuenia
+todos los then llevan una funcion; el resultado esta adentro del then
+podemos usar un catch para atrapar errores
+
+SEQUELIZE
+dentro de databse y de models esta el archivo index.js: conexion con la base de datos y exporta una variable llamada db
+
+en config.js agregamos module.exports
+configuramos los datos de nuestra db (password, etc)
+al final exportamos db, tiene la propiedad sequelize (que luego importamos en otros archivos)
+
+MODELOS
+ORM: este tipo de sistemas va a atener ventaja: a la hr de hacer consulta a la db retorna info de manera util y comoda
+sequelize necesita entender como es nuestra db 
+definimos nuestra capa de modelo: MVC 
+modelo: representacion de los datos en el sistemas + consultar, insertar, actualizar y eliminar datos
+configurar el proyecto con sequelize init
+modelo hace una representacion de la tabla: ponemos el nombre y columnas a usar 
+ponemos archivos dentro del modelo
+un archivo de modelo exporta una funcion con dos parametros: conexion con la db y el segundo el tipo (datatypes)
+creamos una constante: sequelize.define()
+completar los parametros que recibe define    
+1. string con el nombre del modelo
+2. obj lit con detalle de la tabla
+3. obj lit con mas detalle (table name)
+atributo type: tipo de dato correcto, tiene que estar siempre
+si hay una restriccion hay que ponerla
+automatizar el proceso; el nombre de la tabla no es necesario, infiere que el nombre de la tabla es el nombre del modelo en plural
+define puede recibir el 3er parametro
+
+FINDS: buscar a traves de los modelos 
+findAll: buscar todo
+usar el then 
+findByPK: recibe como parametro un id y devuelve el registro de ese id
+
+app.js tenemos app.use que nos lleva a la ruta 
+si vamos a esa ruta vemos que tenemos un get que nos lleva al controlador
+en el controlador tenemos la funcion que trae desde la base de datos y lo muestra a traves de las vistas
+el controlador esta conectado con la view para que lo pueda ver el usuario
+
+en el controlador traemos la variable db requiriendola de la database/models
+podemos acceder a los modelos; para eso usamos el alias en el controlador 
+sequelize usa el findAll que trae todos los registros de una tabla, el pedido es asincronico: usamos un then
+res.render para pasarlo a la vista 
+
+WHERE Y OPERADORES
+datos especificos: aplicar condiciones a la consulta
+filtrar
+el where tiene adentro la columna y lo que queremos buscar/comparar
+columna y valor a buscar
+findOne: el primero que matchee las condiciones
+like: dentro del where; exportar de sequelize los operadores para poder usarlos (Op), va entre corchetes []; informar que queremos lo que se busca 
+
+ORDER BY, LIMIT Y OFFSET
+order by: ordenar, array
+
+limit: cuantos resultados buscamos
+numero entero para representar cuantos elementos queremos
+
+offset: especificar a partir de que elementos queremos que nos devuelva el resultado
+dentro de la consulta 
+columna donde aplicaremos el orden y en que orden
+
+RELACIONES UNO A MUCHOS
+unir tablas y generar nueva info
+completamos en ambos modelos
+1. hasMany (tiene muchas): modelo y objeto literal con as y foreignKey
+2. belongsTo (pertenece): foreignKey (pasamos modelo a asociar, columna en la db que une a las dos tablas), y as (alias, objeto literal)
+
+associate: asociaciones que recibe funcion con los modelos y definimos ahi adentro las relaciones: 
+
+include (dentro del findAll): recibe objeto literal con el nombre de la asociacion en la vista
+
+RELACIONES MUCHOS A MUCHOS
+belongsToMany: modelo a asociar + objeto de configuracion literal (as, through a traves de que tabla pivot, foreignKey cual es le nomrbe de la columna en la tabla pivot, otherKey columna en la tabla pivot que hace referencia a la conexion, timestamps)
+
+METODOS HTTP
+estandar de comunicacion entre los distintos actores de una red 
+lineamientos para procesar informacion: cliente y servidor
+metodo: que sucedera cuando se accede a un recurso
+
+Get: obtener y solicitar datos al servidor, para peticiones al servidor (no modificar info), a traves de un enlace
+info visible
+enviar rta al cliente
+vienen desde la ulr, o enlace
+implementar en el sistema de rutas; string con recurso a visitar + funcion callback
+definimos que hace dentro del controlador, es normal qe retorne una vista 
+recuperar: usamos query string: cadena de texto que contiene info dinamica que puede ser utilizada dentro de los controladores
+claves y valores y arranca dsp de la ruta con el ?, permite configurar la pagina web 
+url puede ser agregada a favoritos: permalink, enlace permanente, guarda configuracion necesaria 
+para acceder dentro del controlador usamos req.query (objeto literal)
+
+Post: enviar datos al servidor, crear registros, guardar un registro en la base de datos; a traves de formularios; muy seguro
+info oculta, proteccion de info
+se utiliza sobre el sistema de rutas: string con recurso a visitar + funcion callback
+redireccionamiento a otra ruta de tipo get
+no se pueden acceder desde la ul ni desde enlaces
+formulario: action ruta a donde se enviaran los datos que envie el usuario y method POST; el valor asumido es get, hay que cambiarlo
+app.js: app.use under..
+capturar lo que venga de un formulario en obj lit y si queremos podemos cambiarlo a formato json
+request y response
+dentro del request esta body: objeto literal que contiene la informacion que llega
+name: lo que esta en la etiqueta input y el valor va a ser lo que haya ingresado el usuario
+req.body tiene toda la informacion que envia el usuario; la usamos en post (no en get)
+del body que viaja en el request se obtiene la info que viaja desde el formulario
+
+Put (reemplazar y modificar datos de un registro, info presente) 
+Delete (borrar recursos presentes)
+Create (insertar datos en la db)
+Update (actualizar registros en la db)
+Destroy (eliminar registros en la db)
+
+HASHING (encriptar informacion)
+lo que se almacena es el hash y no el dato original
+hashSync (texto a encriptar y la sal)
+compareSync (compara texto plano con hash)
+
+SESSION
+es una variable que esta accesible en todo el sitio, nos ermite guardar y compartir info de un mismo usuario entre las vistas 
+usamos session para que los usuarios puedan identificarse
+a cada usuario se le asignara una sesion unica: almacenar el estado de ese usuario
+la informacion del usuario la guardaremos del lado del servidor
+el identificador unico que asocia la info con ese usuario lo guardaremos del lado del cliente en el navegador
+cuando el usuario cierra el navegador la info se borrar
+al momento de querer definir y almacenar info llamamos a la propiedad session del obj request: req.session
+para compartir info con todas las vistas de nuestro sitio usamos res.locals en app: es un obj lit donde puedo almacenar todos los valores que quieran compartir con todas las vistas
+
+COOKIES
+es un archivo de texto que creamos desde el servidor y se lo mandamos al navegador
+permite guardar informacion del lado del clientetiempo de vida (cuando expira ese tiempo deja de existir)
+identificar a un usuario y mantenerlo logueado cuando cierre el navegador
+la cookie tiene nonbre, valor y tiempo de vigencia 
+usamos req.cookies con el nombre de la cookie para leer esa info
+usamos clearCookie() indicando el nombre de la cookie dentro de los parentesis

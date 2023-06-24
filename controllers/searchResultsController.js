@@ -38,7 +38,9 @@ let searchResultsController = {
         [op.or]: [
           { username: { [op.like]: `%${usubuscado}%` } },
         ]
+        
       },
+      //op es un paquete que contiene un conjunto de operadores; like dentro del where; exportar de sequelize los operadores para poder usarlos (Op), va entre corchetes []; informar que queremos lo que se busca 
       order: [['createdAt', 'DESC']],
     }
 

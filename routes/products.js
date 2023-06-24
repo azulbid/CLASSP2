@@ -14,4 +14,7 @@ router.get('/modify/:id', productsController.modify)
 router.post('/modify/:id', productsController.modificado)
 router.post('/delete/:id', productsController.delete)
 
+//tenemos pedidos por POST: metodo http que manda datos al servidor 
+//dentro del post esta: ruta que tenemos que ejecutar, conectada al controlador y su respectivo metodo  
+
 module.exports = router; 
